@@ -23,10 +23,30 @@ const manifest = isDev
     }
   : JSON.parse(fs.readFileSync(manifestPath, { encoding: 'utf8' }));
 
+// Use markdown-it
+function configureMarkdownIt() {
+  // Reference: https://github.com/markdown-it/markdown-it-container/issues/23
+  return require("markdown-it")({ html: true, linkify: true })
+    .use(require('markdown-it-attrs'))
+    .use(require('markdown-it-container'), 'dynamic', {
+      validate: function () { return true; },
+      render: function (tokens, idx) {
+        const token = tokens[idx];
+        if (token.nesting === 1) {
+          return '<div class="' + token.info.trim() + '">';
+        } else {
+          return '</div>';
+        }
+      }
+    });
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlight);
+
+  eleventyConfig.setLibrary( 'md', configureMarkdownIt() );
 
   // setup mermaid markdown highlighter
   const highlighter = eleventyConfig.markdownHighlighter;
