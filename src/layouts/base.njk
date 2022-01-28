@@ -81,9 +81,24 @@
                   {% endif %}
 
                   <li class="nav-item">
-                    <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }}>{{ item.text }}</a>
+                    <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }}>{{ item.text }} {{ item.icon | safe }}</a>
                   </li>
                 {% endfor %}
+
+            {% if site.socialLinks %}
+              {% for item in site.socialLinks %}
+                {% set externalAttribute = '' %}
+
+                {% if item.external %}
+                  {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
+                {% endif %}
+
+                <li class="nav-social">
+                  <a href="{{ item.url | url }}" title="{{ item.title }}" {{ externalAttribute | safe }} >{{ item.icon | safe }}</a>
+                </li>
+              {% endfor %}
+            {% endif %}
+
               </ul>
             </nav>
 
@@ -100,20 +115,6 @@
         <div class="footer__content">
 
           <ul class="hero__social-links">
-            {% if site.socialLinks %}
-              {% for item in site.socialLinks %}
-                {% set externalAttribute = '' %}
-
-                {% if item.external %}
-                  {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
-                {% endif %}
-
-                <li>
-                  <a href="{{ item.url | url }}" {{ externalAttribute | safe }} >{{ item.text }}</a>
-                </li>
-              {% endfor %}
-            {% endif %}
-
             {% if site.footerLinks %}
 
               {% for item in site.footerLinks %}

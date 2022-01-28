@@ -4,7 +4,7 @@
 @import 'typography.css';
 @import 'post-list.css';
 @import 'hero.css';
-@import 'header.css';
+@import 'header.scss';
 @import 'footer.css';
 @import 'post.css';
 @import 'about.css';

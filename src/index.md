@@ -1,6 +1,6 @@
 ---
 layout: home
-title: 'Eleventy Duo'
+title: 'Keith’s Krazy Web Site'
 ---
 
 # Hello World
