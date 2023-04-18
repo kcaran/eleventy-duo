@@ -1,5 +1,5 @@
 const { DateTime } = require('luxon');
-const readingTime = require('eleventy-plugin-reading-time');
+const timeToRead = require('eleventy-plugin-time-to-read');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const htmlmin = require('html-minifier')
@@ -42,7 +42,7 @@ function configureMarkdownIt() {
 }
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(readingTime);
+  eleventyConfig.addPlugin(timeToRead);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlight);
 
