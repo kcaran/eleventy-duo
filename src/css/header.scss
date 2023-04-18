@@ -19,19 +19,27 @@
   border-bottom: 1px solid rgba(230, 230, 230, 1);
 }
 
-.site-title {
-  font-size: var(--text-xl);
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.site-title a {
+a.site-title {
   color: rgb(6 6 6);
   text-decoration: none;
 }
 
-.site-title a:hover {
+a.site-title:hover {
   color: rgb(41, 41, 41);
+}
+
+.site-title h1 {
+  font-size: var(--text-xl);
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+
+.site-title h2 {
+  font-size: var(--text-base);
+  color: rgb(117, 117, 117);
+  text-transform: none;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
 }
 
 .nav__list {
@@ -39,8 +47,6 @@
   justify-content: space-around;
   list-style: none;
   font-size: var(--text-base);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   align-items: center;
 }
 

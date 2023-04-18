@@ -59,11 +59,10 @@
 
       <header class="header">
         <div class="header__content">
-          <h1 class="site-title">
-            <a href={{ "/" | url }}>
-              {{site.name}}
-            </a>
-          </h1>
+          <a class="site-title" href={{ "/" | url }}>
+          <h1>{{site.name}}</h1>
+          <h2>{{site.description}}</h2>
+          </a>
 
           {% if site.headerLinks %}
             <nav class="nav">
