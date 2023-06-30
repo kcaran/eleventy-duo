@@ -1,0 +1,131 @@
+{
+  "name": "Keith Carangelo",
+  "occupation": "Web Application Manager and Developer",
+  "location": "Cambridge MA",
+  "email" : "mail@kcaran.com",
+  "website": { "label": "kcaran.com", "url": "https://www.kcaran.com" },
+  "summary": "Consistently successful in releasing products and working with internal and external customers in a wide range of projects, including web development, graphical user interfaces, networking, and embedded systems. Led projects in all phases of the product lifecycle. Skills include fluency in Perl, Java, SQL, and web technologies (HTML, CSS, JavaScript, AJAX, jQuery) and real-time design experience in C/C++ under UNIX.",
+  "experience": [
+    {
+      "title": "Web Development Manager",
+      "employer": "Safety Insurance",
+      "location": "Boston MA",
+      "start": "07/11",
+      "end": "Present",
+      "summary": "I lead a nine-person team of designers and developers responsible for three web sites, over fifty web applications, and iOS and Android mobile applications. Customers include 625 employees, 5,000 independent insurance agents, and 150,000 insureds.",
+      "notes": [
+        "Developed new iOS and Android mobile apps using Cordova. Wrote plugins to interface with a bank's existing mobile payment libraries.",
+        "Led redesign of SafetyInsurance.com to be responsive to different screen resolutions, and implemented a mobile version of its My Account functionality.",
+        "Designed Safety's eBill and Alert Center infrastructures, sending 5,000 notices each week to insureds."
+       ]
+    },
+    {
+      "title": "Senior Lead Web Developer",
+      "employer": "Safety Insurance",
+      "location": "Boston MA",
+      "start": "04/03",
+      "end": "07/11",
+      "summary": "Wrote custom web applications using Perl, Java, JavaScript under Linux/Apache and Windows 2000/IIS and SQL Server and DB2 databases. Accomplishments include:",
+      "notes": [
+        "Designed an in-house user authentication platform using digital certificates saving $250,000 per year over third- party solutions. Wrote a revocation security Apache module in C and an IIS ISAPI filter in C++.",
+        "Developed multithreaded Websphere MQ communication middleware in Java, reducing the amount of failed customer requests per day from 700 to zero.",
+        "Successfully led project to house all web applications in-house, eliminating hosting fees ($8000/month). Then championed switching the web development environment to Apache and Linux and ported all existing applications to be cross-platform. Originated and led the company’s use of version control software (CVS), which rectified a key Sarbanes-Oxley deficiency. Introduced new technologies such as jQuery and AJAX.",
+        "Created web-based claim entry applications, automating the entry of 8,000 claims per month; a web-based customized PDF report generator relating premiums to losses; and security and authorization administration tools that were then used in multiple projects.",
+        "Developed a document management system, allowing documents to be stored on a much cheaper storage device. Devised a backup system for current documents for use in disaster recovery."
+      ]
+    },
+    {
+      "title": "Contract Software Engineer",
+      "employer": "Argent Software",
+      "location": " Londonderry NH",
+      "start": "05/02",
+      "end": "11/02",
+      "notes": [
+        "Produced distributed monitoring and job scheduling products for a variety of Unix platforms (Linux, AIX, HP- UX, and Solaris). Designed an interface to existing Windows products through TCP/IP sockets using XML. Created monitoring software for storage hardware on Unix and Windows.",
+        "Revamped company's website. Wrote scripts for CGI processing, automated updating of pages in Perl and JavaScript, and updated Java applets."
+      ]
+    },
+    {
+      "title": "Contract Software Engineer",
+      "employer": "EMC",
+      "location": "Hopkinton MA",
+      "start": "10/00",
+      "end": "12/01",
+      "summary": "Member of the EMC Control Center development team that released a distributed, real-time manager of large storage systems and networks.",
+      "notes": [
+        "Wrote interface between Symmetrix storage hardware and the Control Center server, GUI display, and repository database. Code was developed with Visual C++ for Windows and Gnu G++ for SunOS, AIX, and Linux.",
+        "Debugged and developed GUI display code in Java and SQL."
+      ]
+    },
+    {
+      "title": "Contract Software Engineer",
+      "employer": "Teradyne",
+      "location": "Boston MA",
+      "start": "01/98",
+      "end": "10/00",
+      "summary": "Developed GUI, application, and driver software for semiconductor test equipment using C, C++, Perl, and Xview under SunOS.",
+      "notes" : [
+        "Created a new driver debug GUI using TCP/IP sockets to connect to main application. Embedded an automatic test feature that simulated GUI controls and tested their functionality. Ported and extended a failure bitmapping utility and graphics library.",
+        "Designed a pattern template utility in Perl and an accompanying GUI written in C++ and Xview.",
+        "Wrote automated testing programs using randomly generated input to increase test coverage.",
+        "Used Lex and Yacc compiler tools to convert custom test scripts into C code."
+      ]
+    },
+    {
+      "title": "Contract Software Engineer",
+      "employer": "Computer Network Technology",
+      "location": "Westborough MA",
+      "start": "07/97",
+      "end": "01/98",
+      "notes": [
+        "Ported SNA Server to Stratus FTX operating system, including communication over SDLC, X.25, and Token Ring and a gateway to TCP/IP.",
+        "Implemented X.25 and QLLC protocols for PU2.1 server for SunOS and FTX in C. Added QLLC parameters to graphical user interface using C++ and SNMP to connect to main application."
+      ]
+    },
+    {
+      "title": "Contract Software Engineer",
+      "employer": "Draper Labs",
+      "location": "Cambridge MA",
+      "start": "09/95",
+      "end": "07/97",
+      "summary": "Designed communication, user interface, and applications software for a Navy transport submarine. System developed in embedded C under SunOS on 68040 microprocessors and vxWorks. Coordinated efforts between two-member display processor and four-member control processor teams.",
+      "notes": [
+        "Developed inter-processor communication and user interface control. Designed route planning and contact management systems. Designed layout and control for fifteen display screens.",
+        "Wrote GPS and other serial I/O hardware drivers."
+      ]
+    },
+    {
+      "title": "Senior Software Engineer",
+      "employer": "Hewlett Packard",
+      "location": "Andover MA",
+      "start": "01/90",
+      "end": "09/95",
+      "summary": "Designed object-oriented operating and applications software for medical ultrasound imaging systems. System developed in embedded C and assembly language under HP-UX on 68020 microprocessors and pSOS, and also on the C31 DSP chip. Wrote power modeling simulation tools in C++ under HP-UX.",
+      "notes": [
+        "Lead a six-person TQC process improvement team that cut power measurement time in half. Mentored a summer intern who successfully completed a data entry tool.",
+        "Implemented embedded debug tools used by manufacturing, QA, and R&D to decrease testing time.",
+        "Generalized a hard-coded inter-processor communication (IPC) algorithm to allow subsystems to be disabled or shifted to other nodes with minimal porting.",
+        "Supported nine different hardware boards with client-server based firmware. Increased maintainability by making all hardware support to be backwards compatible."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.S. Electrical Engineering",
+      "school": "Rensselaer Polytechnic Institute, Troy, NY",
+      "date": "December, 1989",
+      "notes": [
+        "Concentration in digital communication. Researched using neural networks for audio pattern recognition.",
+        "GPA: 3.63/4.0"
+        ]
+    },
+    {
+      "degree": "B.S. Computer and Systems Engineering",
+      "school": "RPI, Troy, NY",
+      "date": "May, 1988",
+      "notes": [
+        "GPA: 3.68/4.0"
+        ]
+    }
+  ]
+}

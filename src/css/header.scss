@@ -70,13 +70,14 @@ a.site-title:hover {
 }
 
 .nav-social a {
-	display: inline-block;
-	width: 44px;
 	padding: 0 8px;
 	text-decoration: none;
+	& svg {
+		display: inline-block;
+		width: 28px;
+		vertical-align: text-bottom;
+	}
 	&[title="twitter"] {
-		position: relative;
-		top: 0;
 	}
 	&[title="github"]:hover, &[title="twitter"]:hover {
 		opacity: 0.7;

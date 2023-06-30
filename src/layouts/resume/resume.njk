@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ name }} | {{ occupation }}| Résumé</title>
+
+ {% bundledcss %}
+
+</head>
+
+<body>
+
+<main role="main">
+
+<main class="main container">
+
+<header>
+<h1>{{ name }}</h1>
+<h3>{{ occupation }}</h3>
+<p>{{ location }}</p>
+<p>{{ email }}</p>
+<p><a href="{{ website.url }}">{{ website.label }}</a>
+<p><a href="mailto:{{ email }}">{{ email }}</a></p>
+{% if site.socialLinks %}
+<ul class="social">
+{% for item in site.socialLinks %}
+{% set externalAttribute = '' %}
+
+{% if item.external %}
+  {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
+{% endif %}
+
+<li class="nav-social">
+   <a href="{{ item.url | url }}" title="{{ item.title }}" {{ externalAttribute | safe }} >{{ item.icon | safe }} {{ item.username | safe }}</a>
+</li>
+</ul>
+{% endfor %}
+{% endif %}
+</header>
+
+<section id="introduction">
+  <h2>Summary</h2>
+  <p>{{ summary }}</p>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  {% for e in experience %}
+  <div class="job">
+  <h3>{{ e.title }}</h3>
+  <p>{{ e.employer }} - {{ e.location }}</p>
+  <p>{{ e.start }} – {{ e.end }}</p>
+  <p>{{ e.summary }}</p>
+  {% if e.notes %}
+    <ul>
+    {% for n in e.notes %}
+       <li><p>{{ n }}</p></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  </div>
+  {% endfor %}
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  {% for e in education %}
+  <div class="job">
+  <h3>{{ e.degree }}</h3>
+  <p>{{ e.school }} - {{ e.date }}</p>
+  {% if e.summary %}<p>{{ e.summary }}</p>{% endif %}
+  {% if e.notes %}
+    <ul>
+    {% for n in e.notes %}
+       <li><p>{{ n }}</p></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  </div>
+  {% endfor %}
+</section>
+
+{% if author.skills or author.languages %}
+<div class="grid grid--2col">
+            {% if author.skills %}
+            <section class="section section--half" id="section-skills">
+                <h2 class="section__title">{{ strings.titles.skills }}</h2>
+                <ul class="bulletlist">
+                {% for skill in author.skills %}
+                    <li class="p-skill">{{ skill }}</li>
+                {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+
+            {% if author.languages %}
+            <section class="section section--half" id="section-languages">
+                <h2 class="section__title">{{ strings.titles.languages }}</h2>
+                <ul class="bulletlist">
+                {% for language in author.languages %}
+                    <li class="p-skill">{{ language.name }} ({{ language.level }})</li>
+                {% endfor %}
+                </ul>
+            </section>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    {% if repositories.length %}
+        <section class="section" id="section-oss">
+            <h2 class="section__title">{{ strings.titles.open_source }}</h2>
+            {% include "repositories.njk" %}
+        </section>
+    {% endif %}
+
+    {% if collections.custom.length %}
+        {% set custom = collections.custom|first %}
+        <section class="section" id="section-custom">
+            {% if custom.data.title %}
+                <h2 class="section__title">{{ custom.data.title }}</h2>
+            {% endif %}
+            <div class="markdown">
+                {{ custom.templateContent | safe }}
+            </div>
+        </section>
+    {% endif %}
+</main>
+
+</body>
+</html>
