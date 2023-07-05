@@ -85,7 +85,7 @@
                 {% endfor %}
 
             {% if site.socialLinks %}
-              {% for item in site.socialLinks %}
+              {% for name, item in site.socialLinks %}
                 {% set externalAttribute = '' %}
 
                 {% if item.external %}
@@ -93,10 +93,14 @@
                 {% endif %}
 
                 <li class="nav-social">
-                  <a href="{{ item.url | url }}" title="{{ item.title }}" {{ externalAttribute | safe }} >{{ item.icon | safe }}</a>
+                  <a href="{{ item.url | url }}" title="{{ item.title }}" {{ externalAttribute | safe }} >{{ site.icons[item.title] | safe }}</a>
                 </li>
               {% endfor %}
             {% endif %}
+
+                <li class="nav-social">
+                  <a href="mailto:{{ site.author.email }}" title="email me" {{ externalAttribute | safe }} >{{ site.icons['email'] | safe }}</a>
+                </li>
 
               </ul>
             </nav>
@@ -132,10 +136,8 @@
 
           {% if site.showFooterAttribution %}
             <p class="footer__attribution">
-          Created by
-      <a href="https://twitter.com/yinkakun" target="_blank" rel="noopener">Yinka,</a>
-       Powered by <a href="https://www.11ty.dev" target="_blank" rel="noopener">11ty,</a>
-        Checkout <a href="https://github.com/yinkakun/eleventy-duo" target="_blank" rel="noopener noreferrer">project's github repo </a>
+       Powered by <a href="https://www.11ty.dev" target="_blank" rel="noopener">11ty</a>
+        and <a href="https://github.com/yinkakun/eleventy-duo" target="_blank" rel="noopener noreferrer">Eleventy-Duo</a>
             </p>
           {% endif %}
 

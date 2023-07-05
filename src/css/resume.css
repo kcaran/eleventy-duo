@@ -1,0 +1,40 @@
+main.resume {
+	margin-top: 3rem;
+}
+
+main.resume .nav-social {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+main.resume .nav-social li {
+	list-style: none;
+}
+
+main.resume .nav-social li a {
+	display: inline-block;
+	position: relative;
+	padding-left: 2.5rem;
+	line-height: 2.25rem;
+	margin-bottom: 4px;
+}
+
+main.resume .nav-social a svg {
+	position: absolute;
+	left: 0;
+	top: 4px;
+}
+
+main.resume header h3, main.resume header p {
+	margin: 0;
+}
+
+main.resume section {
+	margin-top: 2rem;
+}
+
+main.resume section h2 {
+	margin-bottom: 1rem;
+}
+

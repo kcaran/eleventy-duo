@@ -11,32 +11,28 @@
 
 <body>
 
-<main role="main">
-
-<main class="main container">
+<main role="main" class="resume">
 
 <header>
 <h1>{{ name }}</h1>
 <h3>{{ occupation }}</h3>
 <p>{{ location }}</p>
-<p>{{ email }}</p>
-<p><a href="{{ website.url }}">{{ website.label }}</a>
-<p><a href="mailto:{{ email }}">{{ email }}</a></p>
+
+<ul class="nav-social">
+<li><a href="{{ website.url }}">{{ site.icons['web'] | safe }}{{ website.label }}</a></li>
+<li><a href="mailto:{{ email }}">{{ site.icons['email'] | safe }}{{ email }}</a></li>
 {% if site.socialLinks %}
-<ul class="social">
-{% for item in site.socialLinks %}
-{% set externalAttribute = '' %}
+  {% for name, item in site.socialLinks %}
+    {% set externalAttribute = '' %}
 
-{% if item.external %}
-  {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
-{% endif %}
+    {% if item.external %}
+      {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
+    {% endif %}
 
-<li class="nav-social">
-   <a href="{{ item.url | url }}" title="{{ item.title }}" {{ externalAttribute | safe }} >{{ item.icon | safe }} {{ item.username | safe }}</a>
-</li>
-</ul>
+    <li><a href="{{ item.url | url }}" title="{{ item.title }}" {{ externalAttribute | safe }} >{{ site.icons[name] | safe }} {{ item.username | safe }}</a></li>
 {% endfor %}
 {% endif %}
+</ul>
 </header>
 
 <section id="introduction">
