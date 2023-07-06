@@ -14,13 +14,15 @@
 <main role="main" class="resume">
 
 <header>
+<div class="identity">
 <h1>{{ name }}</h1>
 <h3>{{ occupation }}</h3>
 <p>{{ location }}</p>
+</div>
 
 <ul class="nav-social">
-<li><a href="{{ website.url }}">{{ site.icons['web'] | safe }}{{ website.label }}</a></li>
-<li><a href="mailto:{{ email }}">{{ site.icons['email'] | safe }}{{ email }}</a></li>
+<li><a href="{{ website.url }}" title="Website">{{ site.icons['web'] | safe }}{{ website.label }}</a></li>
+<li><a href="mailto:{{ email }}" title="Email">{{ site.icons['email'] | safe }}{{ email }}</a></li>
 {% if site.socialLinks %}
   {% for name, item in site.socialLinks %}
     {% set externalAttribute = '' %}
@@ -31,6 +33,9 @@
 
     <li><a href="{{ item.url | url }}" title="{{ item.title }}" {{ externalAttribute | safe }} >{{ site.icons[name] | safe }} {{ item.username | safe }}</a></li>
 {% endfor %}
+{% if linkedin %}
+    <li><a href="{{ linkedin }}" title="LinkedIn">{{ site.icons['linkedin'] | safe }}&nbsp;</a></li>
+{% endif %}
 {% endif %}
 </ul>
 </header>
@@ -45,11 +50,11 @@
   {% for e in experience %}
   <div class="job">
   <h3>{{ e.title }}</h3>
-  <p>{{ e.employer }} - {{ e.location }}</p>
-  <p>{{ e.start }} – {{ e.end }}</p>
-  <p>{{ e.summary }}</p>
+  <h4><span class="employer">{{ e.employer }} &bull; {{ e.location }}</span>
+  <span class="date">{{ e.start }} – {{ e.end }}</span></h4>
+  <p class="summary">{{ e.summary }}</p>
   {% if e.notes %}
-    <ul>
+    <ul class="notes">
     {% for n in e.notes %}
        <li><p>{{ n }}</p></li>
     {% endfor %}
@@ -58,16 +63,16 @@
   </div>
   {% endfor %}
 </section>
-
+<span>
 <section id="education">
-  <h2>Education</h2>
-  {% for e in education %}
-  <div class="job">
-  <h3>{{ e.degree }}</h3>
-  <p>{{ e.school }} - {{ e.date }}</p>
-  {% if e.summary %}<p>{{ e.summary }}</p>{% endif %}
+<h2>Education</h2>
+{% for e in education %}
+<div class="job">
+<h3>{{ e.degree }}</h3>
+<h4><span>{{ e.school }} &bull; {{ e.location }}</span><span>{{ e.date }}</span></h4>
+  {% if e.summary %}<p class="summary">{{ e.summary }}</p>{% endif %}
   {% if e.notes %}
-    <ul>
+    <ul class="notes">
     {% for n in e.notes %}
        <li><p>{{ n }}</p></li>
     {% endfor %}
@@ -77,50 +82,6 @@
   {% endfor %}
 </section>
 
-{% if author.skills or author.languages %}
-<div class="grid grid--2col">
-            {% if author.skills %}
-            <section class="section section--half" id="section-skills">
-                <h2 class="section__title">{{ strings.titles.skills }}</h2>
-                <ul class="bulletlist">
-                {% for skill in author.skills %}
-                    <li class="p-skill">{{ skill }}</li>
-                {% endfor %}
-                </ul>
-            </section>
-            {% endif %}
-
-            {% if author.languages %}
-            <section class="section section--half" id="section-languages">
-                <h2 class="section__title">{{ strings.titles.languages }}</h2>
-                <ul class="bulletlist">
-                {% for language in author.languages %}
-                    <li class="p-skill">{{ language.name }} ({{ language.level }})</li>
-                {% endfor %}
-                </ul>
-            </section>
-            {% endif %}
-        </div>
-    {% endif %}
-
-    {% if repositories.length %}
-        <section class="section" id="section-oss">
-            <h2 class="section__title">{{ strings.titles.open_source }}</h2>
-            {% include "repositories.njk" %}
-        </section>
-    {% endif %}
-
-    {% if collections.custom.length %}
-        {% set custom = collections.custom|first %}
-        <section class="section" id="section-custom">
-            {% if custom.data.title %}
-                <h2 class="section__title">{{ custom.data.title }}</h2>
-            {% endif %}
-            <div class="markdown">
-                {{ custom.templateContent | safe }}
-            </div>
-        </section>
-    {% endif %}
 </main>
 
 </body>

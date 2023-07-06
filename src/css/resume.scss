@@ -1,0 +1,51 @@
+main.resume {
+	margin-top: 3rem;
+	& header {
+		display: flex;
+		justify-content: space-between;
+	}
+	& .nav-social {
+		& li {
+			list-style: none;
+			& a {
+				display: inline-block;
+				position: relative;
+				padding-left: 2.5rem;
+				line-height: 2.25rem;
+				margin-bottom: 4px;
+			}
+		}
+	}
+}
+
+main.resume .nav-social a svg {
+	position: absolute;
+	left: 0;
+	top: 4px;
+}
+
+main.resume header h3, main.resume header p {
+	margin: 0;
+}
+
+main.resume section {
+	margin-top: 2rem;
+	& h2 {
+		margin-bottom: 1rem;
+	}
+}
+
+main.resume .job {
+	margin-top: 2rem;
+	& h3, & h4 {
+		margin: 0;
+	}
+	& h4 {
+		display: flex;
+		justify-content: space-between;
+	}
+	& li {
+		margin-top: 1rem;
+	}
+}
+

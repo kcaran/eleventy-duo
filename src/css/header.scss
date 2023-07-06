@@ -81,9 +81,7 @@ a.site-title:hover {
 		width: 28px;
 		vertical-align: text-bottom;
 	}
-	&[title="twitter"] {
-	}
-	&[title="github"]:hover, &[title="twitter"]:hover {
+	&:hover svg {
 		opacity: 0.7;
 	}
 }

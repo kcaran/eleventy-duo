@@ -4,7 +4,8 @@
   "location": "Cambridge MA",
   "email" : "mail@kcaran.com",
   "website": { "label": "kcaran.com", "url": "https://www.kcaran.com" },
-  "summary": "Consistently successful in releasing products and working with internal and external customers in a wide range of projects, including web development, graphical user interfaces, networking, and embedded systems. Led projects in all phases of the product lifecycle. Skills include fluency in Perl, Java, SQL, and web technologies (HTML, CSS, JavaScript, AJAX, jQuery) and real-time design experience in C/C++ under UNIX.",
+  "linkedin": "https://www.linkedin.com/in/keith-carangelo-7972541/",
+  "summary": "Consistently successful in releasing products and working with internal and external customers in a wide range of projects, including web development, graphical user interfaces, networking, and embedded systems. Led projects in all phases of the product lifecycle. Skills include fluency in Perl, JavaScript, Java, SQL, and web technologies (HTML, CSS, jQuery) and real-time development experience in C/C++ under UNIX.",
   "experience": [
     {
       "title": "Web Development Manager",
@@ -112,8 +113,9 @@
   "education": [
     {
       "degree": "M.S. Electrical Engineering",
-      "school": "Rensselaer Polytechnic Institute, Troy, NY",
-      "date": "December, 1989",
+      "school": "Rensselaer Polytechnic Institute",
+      "location": "Troy NY",
+      "date": "December 1989",
       "notes": [
         "Concentration in digital communication. Researched using neural networks for audio pattern recognition.",
         "GPA: 3.63/4.0"
@@ -121,8 +123,9 @@
     },
     {
       "degree": "B.S. Computer and Systems Engineering",
-      "school": "RPI, Troy, NY",
-      "date": "May, 1988",
+      "school": "RPI",
+      "location": "Troy NY",
+      "date": "May 1988",
       "notes": [
         "GPA: 3.68/4.0"
         ]

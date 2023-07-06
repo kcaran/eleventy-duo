@@ -8,7 +8,7 @@
 @import "footer.css";
 @import "post.css";
 @import "about.css";
-@import "resume.css";
+@import "resume.scss";
 
 .layout-wrapper {
   display: grid;
