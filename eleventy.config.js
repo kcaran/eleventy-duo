@@ -60,6 +60,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addPassthroughCopy({ 'src/images': 'images' });
   eleventyConfig.addPassthroughCopy( 'poker' );
+  eleventyConfig.addPassthroughCopy( { "favicon" : "/" } );
 
   eleventyConfig.addShortcode('bundledcss', function () {
     return manifest['main.css']
