@@ -80,7 +80,11 @@
                     <a href="{{ item.url | url }}" {{ currentAttribute | safe }} {{ externalAttribute | safe }}>{{ item.text }} {{ item.icon | safe }}</a>
                   </li>
                 {% endfor %}
+              </ul>
 
+            </nav>
+
+            <p class="nav-social">
             {% if site.socialLinks %}
               {% for name, item in site.socialLinks %}
                 {% set externalAttribute = '' %}
@@ -89,18 +93,12 @@
                   {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
                 {% endif %}
 
-                <li class="nav-social">
                   <a href="{{ item.url | url }}" title="{{ item.title }}" {{ externalAttribute | safe }} >{{ site.icons[item.title] | safe }}</a>
-                </li>
               {% endfor %}
             {% endif %}
 
-                <li class="nav-social">
                   <a href="mailto:{{ site.author.email }}" title="email me" {{ externalAttribute | safe }} >{{ site.icons['email'] | safe }}</a>
-                </li>
-
-              </ul>
-            </nav>
+            </p>
 
           {% endif %}
 

@@ -11,6 +11,7 @@ header {
 }
 
 .header__content {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -26,6 +27,9 @@ header {
 a.site-title {
   color: rgb(6 6 6);
   text-decoration: none;
+  background: url(../images/originalbug_512_2023.svg) no-repeat 0 0;
+  background-size: contain;
+  padding-left: 92px;
 }
 
 a.site-title:hover {
@@ -74,7 +78,14 @@ a.site-title:hover {
   color: rgb(41, 41, 41);
 }
 
+.nav-social {
+	position: absolute;
+	right: 0;
+	bottom: -44px;
+}
+
 .nav-social a {
+	margin-left: 2rem;
 	padding: 0 8px;
 	text-decoration: none;
 	& svg {
