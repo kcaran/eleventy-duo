@@ -5,6 +5,8 @@ main.resume {
 		justify-content: space-between;
 	}
 	& .nav-social {
+		position: unset;
+		margin-bottom: -48px;
 		& li {
 			list-style: none;
 			& a {
