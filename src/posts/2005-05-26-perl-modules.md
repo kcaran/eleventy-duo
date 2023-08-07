@@ -3,7 +3,7 @@ layout: post
 title:  "Perl Modules Primer"
 date:   '2005-09-26'
 tags: [coding, perl]
-permalink: posts/{{ title | slug }}/index.html
+permalink: posts/{{ title | slug }}.html
 ---
 
 Splitting a Perl application into seperate files can be trickier than

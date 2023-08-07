@@ -3,7 +3,7 @@ layout: post
 title:  "Things I always need to look up in Perl"
 date:   '2009-12-21'
 tags: [coding, perl]
-permalink: posts/{{ title | slug }}/index.html
+permalink: posts/{{ title | slug }}.html
 ---
 
 Here are some random Perl things I always need to look up:

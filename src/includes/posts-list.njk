@@ -1,7 +1,10 @@
 <ul class="post-list">
   {% for post in postslist | reverse %}
     <li class="post-list__item">
-      <div>
+      <h2 class="post-list__title">
+        <a  href="{{ post.url }}">{{ post.data.title }}</a>
+      </h2>
+      <div class="post-list__details">
         <div class="post-list__meta">
           <time datetime="{{ post.date | htmlDateString }}">
             {{ post.date | readableDate }}
@@ -19,10 +22,6 @@
           {% endfor %}
         </div>
       </div>
-
-      <h3 class="post-list__title">
-        <a  href="{{ post.url }}">{{ post.data.title }}</a>
-      </h3>
 
       <p class="post-list__excerpt">{{ post.templateContent | excerpt | safe  }}</p>
 

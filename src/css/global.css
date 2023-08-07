@@ -70,12 +70,12 @@ a {
   text-decoration: none;
   color: inherit;
   text-decoration: inherit;
-  transition: all 200ms linear;
+  /* transition: all 200ms linear;*/
   text-decoration: underline;
 }
 
 a:hover {
-  color: var(--accent);
+  color: var(--raceway);
 }
 
 ol {
@@ -158,7 +158,7 @@ blockquote {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding-left: 1rem;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--raceway);
   font-style: italic;
 }
 
@@ -173,10 +173,10 @@ pre {
 
 code,
 kbd {
-  color: var(--accent);
+  color: var(--raceway);
   font-feature-settings: normal;
-  background: color-mod(var(--accent) a(20%));
-  color: var(--accent);
+  background: color-mod(var(--raceway) a(20%));
+  color: var(--raceway);
   padding: 1px 6px;
   margin: 0 2px;
   font-size: 0.95rem;
@@ -216,7 +216,7 @@ pre code {
 }
 
 mark {
-  background: var(--accent);
+  background: var(--raceway);
   color: var(--background);
   padding: 1px 6px;
   margin: 0 2px;

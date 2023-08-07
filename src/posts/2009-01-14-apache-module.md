@@ -3,7 +3,7 @@ layout: post
 title:  "Writing an Apache Module for RHEL 5"
 date:   '2009-01-14'
 tags: [coding, cvs]
-permalink: posts/{{ title | slug }}/index.html
+permalink: posts/{{ title | slug }}.html
 ---
 
 Recently, I was asked by my employer to write an Apache module.  The module reads the requestor&rsquo;s digital certificate and checks it against our database of active users.  In this post, I&rsquo;ll explain how to get started writing Apache modules, especially for Red Hat Enterprise Linux 5 (RHEL 5.2).

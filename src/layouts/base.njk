@@ -61,7 +61,23 @@
           <h2>{{site.description}}</h2>
           </a>
 
-          {% if site.headerLinks %}
+            <p class="nav-social">
+            {% if site.socialLinks %}
+              {% for name, item in site.socialLinks %}
+                {% set externalAttribute = '' %}
+
+                {% if item.external %}
+                  {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
+                {% endif %}
+
+                  <a href="{{ item.url | url }}" title="{{ item.title }}" {{ externalAttribute | safe }} >{{ site.icons[item.title] | safe }}</a>
+              {% endfor %}
+            {% endif %}
+
+                  <a href="mailto:{{ site.author.email }}" title="email me" {{ externalAttribute | safe }} >{{ site.icons['email'] | safe }}</a>
+            </p>
+        </div>
+
             <nav class="nav">
               <ul class="nav__list">
                 {% for item in site.headerLinks %}
@@ -84,25 +100,6 @@
 
             </nav>
 
-            <p class="nav-social">
-            {% if site.socialLinks %}
-              {% for name, item in site.socialLinks %}
-                {% set externalAttribute = '' %}
-
-                {% if item.external %}
-                  {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
-                {% endif %}
-
-                  <a href="{{ item.url | url }}" title="{{ item.title }}" {{ externalAttribute | safe }} >{{ site.icons[item.title] | safe }}</a>
-              {% endfor %}
-            {% endif %}
-
-                  <a href="mailto:{{ site.author.email }}" title="email me" {{ externalAttribute | safe }} >{{ site.icons['email'] | safe }}</a>
-            </p>
-
-          {% endif %}
-
-        </div>
       </header>
 
       <main class="main">

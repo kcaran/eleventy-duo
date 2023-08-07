@@ -3,7 +3,7 @@ layout: post
 title:  "Automatically Updating CVS Revisions Remotely"
 date:   '2017-08-21'
 tags: [coding, cvs]
-permalink: posts/{{ title | slug }}/index.html
+permalink: posts/{{ title | slug }}.html
 ---
 Our install process involves updating the CVS versions of individual files
 on the staging and ultimately production servers. Web Operations is

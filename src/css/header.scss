@@ -5,8 +5,8 @@ header {
 .header {
   max-width: none;
   width: 100%;
-  text-transform: capitalize;
-  text-transform: uppercase;
+  /*text-transform: capitalize;*/
+  /*text-transform: uppercase;*/
   margin-bottom: 4rem;
 }
 
@@ -21,11 +21,17 @@ header {
   max-width: 48.75rem;
   padding: 1rem;
   margin-top: 1rem;
-  border-bottom: 1px solid rgba(230, 230, 230, 1);
+  border-bottom: 1px solid var( --heather );
+}
+
+.header nav {
+  max-width: 48.75rem;
+  margin: 1rem auto;
+  padding-right: 1.5rem;
 }
 
 a.site-title {
-  color: rgb(6 6 6);
+  color: var( --harbor );
   text-decoration: none;
   background: url(../images/originalbug_512_2023.svg) no-repeat 0 0;
   background-size: contain;
@@ -33,7 +39,7 @@ a.site-title {
 }
 
 a.site-title:hover {
-  color: rgb(41, 41, 41);
+  color: var( --raceway );
 }
 
 .site-title h1 {
@@ -44,7 +50,7 @@ a.site-title:hover {
 
 .site-title h2 {
   font-size: var(--text-base);
-  color: rgb(117, 117, 117);
+  color: var( --sheffield );
   text-transform: none;
   margin-top: 0rem;
   margin-bottom: 1rem;
@@ -52,14 +58,14 @@ a.site-title:hover {
 
 .nav__list {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   list-style: none;
   font-size: var(--text-base);
   align-items: center;
 }
 
 .nav__list a {
-  color: rgb(117, 117, 117);
+  color: var( --harbor );
   text-decoration: none;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -75,13 +81,11 @@ a.site-title:hover {
 }
 
 .nav__list a:hover {
-  color: rgb(41, 41, 41);
+  color: var( --raceway );
 }
 
 .nav-social {
-	position: absolute;
-	right: 0;
-	bottom: -44px;
+	margin: 0;
 }
 
 .nav-social a {
@@ -94,6 +98,6 @@ a.site-title:hover {
 		vertical-align: text-bottom;
 	}
 	&:hover svg {
-		opacity: 0.7;
+        fill: var( --raceway );
 	}
 }

@@ -3,7 +3,7 @@ layout: post
 title:  "Notes from the Perl FAQ"
 date:   '2012-01-20'
 tags: [coding, perl]
-permalink: posts/{{ title | slug }}/index.html
+permalink: posts/{{ title | slug }}.html
 ---
 
 Like the fellow that never read his car's owner's manual, I had never read the
