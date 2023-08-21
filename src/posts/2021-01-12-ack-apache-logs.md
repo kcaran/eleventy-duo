@@ -3,7 +3,7 @@ layout: post
 title:  "Using ack to search Apache web logs"
 date:   '2021-01-12'
 tags: [coding, perl, apache]
-permalink: posts/{{ title | slug }}.html
+permalink: posts/{{ title | slugify }}.html
 ---
 
 The `ack` utility uses Perl regular expressions to efficiently search

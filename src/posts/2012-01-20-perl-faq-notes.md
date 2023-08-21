@@ -3,7 +3,7 @@ layout: post
 title:  "Notes from the Perl FAQ"
 date:   '2012-01-20'
 tags: [coding, perl]
-permalink: posts/{{ title | slug }}.html
+permalink: posts/{{ title | slugify }}.html
 ---
 
 Like the fellow that never read his car's owner's manual, I had never read the
@@ -32,6 +32,7 @@ I finally did it over the holidays, and these are some notes that I took.
 * `@array[1]` - The sigil is *not* the variable type. This is actually a slice with a single element. [<<link>>](https://perldoc.perl.org/perlfaq4.html#What-is-the-difference-between-%24array%5b1%5d-and-%40array%5b1%5d%3f)
 
 * [`List::Util`](https://metacpan.org/pod/List::Util) - `first()` - Similar to grep, but returns the first element where the result from the block is a true value. 
+
 
 	Also includes `max()`, `min()`, `shuffle()`, `sum()`, and `reduce()`. The perldoc also includes a number of example subroutines (all, any, none, notall).
 

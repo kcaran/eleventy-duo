@@ -86,11 +86,13 @@ a.site-title:hover {
 
 .nav-social {
 	margin: 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: baseline;
+	gap: 2rem;
 }
 
 .nav-social a {
-	margin-left: 2rem;
-	padding: 0 8px;
 	text-decoration: none;
 	& svg {
 		display: inline-block;

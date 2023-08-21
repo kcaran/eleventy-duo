@@ -1,11 +1,10 @@
 .tags > * {
-  margin-right: 1rem;
-  margin-top: 0.5rem;
+  margin-right: 1.5rem;
+  line-height: 2rem;
 }
 
 .tags {
   margin-top: 0.5rem;
-  font-size: var(--text-sm);
   margin-bottom: 0.5rem;
 }
 
@@ -76,6 +75,8 @@
 .post-list__tags {
   text-decoration: none;
   font-size: var(--text-sm);
+	display: flex;
+	gap: 1.25rem;
 }
 
 .post-list__tags a {
@@ -85,10 +86,6 @@
 
 .post-list__tags a:hover {
   color: var(--raceway);
-}
-
-.post-list__tags > * + * {
-  margin-left: 1rem;
 }
 
 .post-list__excerpt {

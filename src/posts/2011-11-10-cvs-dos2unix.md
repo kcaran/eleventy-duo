@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "'No such file or directoryectory' in CVS update"
+title:  "CVS update error: 'No such file or directoryectory'"
 date:   '2011-11-10'
 tags: [coding, cvs]
-permalink: posts/{{ title | slug }}.html
+permalink: posts/{{ title | slugify }}.html
 ---
 
 When I execute a CVS update command at work, I often get the following error:

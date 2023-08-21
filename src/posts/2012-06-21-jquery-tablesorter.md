@@ -3,7 +3,7 @@ layout: post
 title:  "Using jQuery Tablesorter With Dynamic Tables"
 date:   '2012-06-21'
 tags: [coding, webdesign, jquery, javascript]
-permalink: posts/{{ title | slug }}.html
+permalink: posts/{{ title | slugify }}.html
 ---
 Here are a couple of tricks to remember when using jQuery's tablesorter plugin with dynamic tables. These are tables that the user can add or delete from.
 

@@ -6,11 +6,20 @@ layout: base.njk
   <header class="post__header">
     <h1>{{ title }}</h1>
     <div class="post__details">
-      <time datetime="{{ page.date | htmlDateString }}">
-        {{ page.date | readableDate }}
-      </time>
-      <span> | </span>
-      <span>{{ content | timeToRead }} read</span>
+      <div class="post__meta">
+        <time datetime="{{ page.date | htmlDateString }}">
+          {{ page.date | readableDate }}
+        </time>
+        <span> | </span>
+        <span>{{ content | timeToRead }} read</span>
+      </div>
+
+      <div class="post__tags">
+        {% for tag in tags | pageTags %}
+          {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+          <a href="{{ tagUrl | url }}">#{{ tag }}</a>
+        {% endfor %}
+      </div>
     </div>
   </header>
 
@@ -19,19 +28,11 @@ layout: base.njk
   </div>
 
   <aside class="post__aside">
-    <div class="post__tags">
-      {% for tag in tags | pageTags %}
-        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}">#{{ tag }}</a>
-      {% endfor %}
-    </div>
-
     <nav class="post__pagination">
       {%- set nextPost = collections.posts | getNextCollectionItem(page) %}
       {%- if nextPost %}
 
-        <a href="{{ nextPost.url | url }}">
-          <span>←</span>
+        <a class="post__next" href="{{ nextPost.url | url }}">
           <span>{{ nextPost.data.title }}</span>
         </a>
 
@@ -40,9 +41,8 @@ layout: base.njk
       {%- set previousPost = collections.posts | getPreviousCollectionItem(page) %}
       {%- if previousPost %}
 
-        <a href="{{ previousPost.url | url }}">
+        <a class="post__prev" href="{{ previousPost.url | url }}">
           <span>{{ previousPost.data.title }}</span>
-          <span>→</span>
         </a>
 
       {% endif %}

@@ -8,6 +8,7 @@
 @import "footer.css";
 @import "post.css";
 @import "about.css";
+@import "mobile.css";
 @import "resume.scss";
 
 .layout-wrapper {
@@ -20,8 +21,6 @@ main {
   display: flex;
   padding-bottom: 4rem;
   flex-direction: column;
-  padding-left: 1rem;
-  padding-right: 1rem;
   min-width: 0;
   max-width: 48.75rem;
   margin-left: auto;

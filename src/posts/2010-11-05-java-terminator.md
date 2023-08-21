@@ -3,7 +3,7 @@ layout: post
 title:  "Java Terminator: Cross-Platform Terminal Emulator"
 date:   '2010-11-05'
 tags: [coding, software]
-permalink: posts/{{ title | slug }}.html
+permalink: posts/{{ title | slugify }}.html
 ---
 
 For years, I've been searching for a suitable terminal emulator for

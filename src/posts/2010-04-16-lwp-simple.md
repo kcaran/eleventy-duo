@@ -3,7 +3,7 @@ layout: post
 title:  "Using LWP::Simple to retrieve binary data"
 date:   '2010-04-16'
 tags: [coding, perl]
-permalink: posts/{{ title | slug }}.html
+permalink: posts/{{ title | slugify }}.html
 ---
 
 We have a Perl CGI script at work that acts as a proxy.  It grabs a

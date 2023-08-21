@@ -3,7 +3,7 @@ layout: post
 title:  "VIM Syntax Coloring for Hand Histories"
 date:   '2009-01-29'
 tags: [poker, vim]
-permalink: posts/{{ title | slug }}.html
+permalink: posts/{{ title | slugify }}.html
 ---
 <p>
 Hand history files, like computer programs, are notoriously difficult to read.

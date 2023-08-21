@@ -3,7 +3,7 @@ layout: post
 title: "Calling a Perl CGI script from within another CGI script"
 date:   '2010-11-19'
 tags: [coding, perl, cgi]
-permalink: posts/{{ title | slug }}.html
+permalink: posts/{{ title | slugify }}.html
 ---
 
 Awhile back we had an issue where a coworker wanted to use one of my

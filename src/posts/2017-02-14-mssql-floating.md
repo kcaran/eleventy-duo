@@ -3,7 +3,7 @@ layout: post
 title: "Calculating Distances in Microsoft SQL Server"
 date: '2017-02-14'
 tags: [coding, mssql]
-permalink: posts/{{ title | slug }}.html
+permalink: posts/{{ title | slugify }}.html
 ---
 
 One feature of almost every modern commercial website is the location finder. Enter in a search address, and site displays the closest locations to it with the distances (as the crow flies).

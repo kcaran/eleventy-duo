@@ -3,7 +3,7 @@ layout: post
 title: "Installing ODBC on Linux for MSSQL and AS400 DB2"
 date: '2013-03-01'
 tags: [coding, perl, sql, as400, mssql]
-permalink: posts/{{ title | slug }}.html
+permalink: posts/{{ title | slugify }}.html
 ---
 
 At work, we use Microsoft SQL Server and IBM AS400 databases.  Here's

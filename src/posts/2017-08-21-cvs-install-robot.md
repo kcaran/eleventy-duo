@@ -3,7 +3,7 @@ layout: post
 title:  "Automatically Updating CVS Revisions Remotely"
 date:   '2017-08-21'
 tags: [coding, cvs]
-permalink: posts/{{ title | slug }}.html
+permalink: posts/{{ title | slugify }}.html
 ---
 Our install process involves updating the CVS versions of individual files
 on the staging and ultimately production servers. Web Operations is
@@ -61,10 +61,10 @@ The fix was to keep the SSH connection open using the ControlMaster feature.
 That way, all of the CVS commands would use the same socket, and the
 firewall saw them as a single request.
 
-~~~
+```bash
 -bash-4.1$ cat .ssh/config
 Host cvs_server
         ControlPath ~/.ssh/%r@%h:%p
         ControlMaster auto
         ControlPersist 10m
-~~~
+```

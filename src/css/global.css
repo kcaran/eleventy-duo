@@ -158,7 +158,7 @@ blockquote {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding-left: 1rem;
-  border-left: 3px solid var(--raceway);
+  border-left: 3px solid var(--atlantic);
   font-style: italic;
 }
 
@@ -173,10 +173,9 @@ pre {
 
 code,
 kbd {
-  color: var(--raceway);
   font-feature-settings: normal;
-  background: color-mod(var(--raceway) a(20%));
-  color: var(--raceway);
+  background: color-mod(var(--heather) a(20%));
+  color: var(--atlantic);
   padding: 1px 6px;
   margin: 0 2px;
   font-size: 0.95rem;
