@@ -1,11 +1,15 @@
 :root {
-  --accent: #0074d9;
   --background: #fffffe;
   --color: rgb(41, 41, 41);
-  --atlantic: #003651;
-  --charcoal: #394a59;
-  --harbor: #004c73;
-  --raceway: #0085c8;
+  --atlantic:  #003651;
+  --charcoal:  #394a59;
+  --harbor:    #004c73;
+  --denim:     #0079b6;
+  --raceway:   #0085c8;
   --sheffield: #697682;
-  --heather: #aec2cb;
+  --heather:   #aec2cb;
+  --alice: #f2fbff;
+
+  /* 1056px grid, 72px with 16px gutters, use 688px (inner 8 cols) */
+  --page_width: 43rem;
 }

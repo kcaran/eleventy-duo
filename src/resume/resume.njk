@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="page_resume" lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,12 +15,10 @@
 
 <body>
 
-<main role="main" class="resume">
-
 <header>
 <div class="identity">
 <h1>{{ name }}</h1>
-<h3>{{ occupation }}</h3>
+<h2>{{ occupation }}</h2>
 <p>{{ location }}</p>
 </div>
 
@@ -44,6 +42,8 @@
 </ul>
 </header>
 
+<main role="main" class="resume">
+
 <section id="introduction">
   <h2>Summary</h2>
   <p>{{ summary }}</p>
@@ -54,7 +54,7 @@
   {% for e in experience %}
   <div class="job">
   <h3>{{ e.title }}</h3>
-  <h4><span class="employer">{{ e.employer }} &bull; {{ e.location }}</span>
+  <h4><span class="employer">{{ e.employer }} &bull; <span class="nowrap">{{ e.location }}</span></span>
   <span class="date">{{ e.start }} – {{ e.end }}</span></h4>
   <p class="summary">{{ e.summary }}</p>
   {% if e.notes %}
@@ -73,7 +73,7 @@
 {% for e in education %}
 <div class="job">
 <h3>{{ e.degree }}</h3>
-<h4><span>{{ e.school }} &bull; {{ e.location }}</span><span>{{ e.date }}</span></h4>
+<h4><span>{{ e.school }} &bull; <span class="nowrap">{{ e.location }}</span></span><span>{{ e.date }}</span></h4>
   {% if e.summary %}<p class="summary">{{ e.summary }}</p>{% endif %}
   {% if e.notes %}
     <ul class="notes">

@@ -31,6 +31,12 @@
 .post__tags a {
 	text-decoration: none;
 	color: var( --harbor );
+	border-bottom: 1px solid transparent;
+}
+
+.post__tags a:hover {
+	color: var( --raceway );
+	border-bottom: 1px dotted var( --harbor );
 }
 
 .post__content {

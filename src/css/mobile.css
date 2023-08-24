@@ -1,0 +1,28 @@
+@media screen and (max-device-width: 480px) {
+html {
+	font-size: 87.5%;
+}
+.header, main, footer {
+	max-width: 100%;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.nav-social {
+	width: 100%;
+}
+.post-list__details, .post__details {
+	display: block;
+}
+.post-list__tags, .post__tags {
+	margin-top: 1rem;
+}
+.post__pagination {
+	display: block;
+}
+.post__pagination a {
+	display: block;
+}
+.post__prev {
+	text-align: right;
+}
+}

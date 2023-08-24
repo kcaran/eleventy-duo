@@ -5,6 +5,9 @@ html {
 }
 
 body {
+  margin: auto;
+  max-width: 66rem;
+  padding: 0 0.5rem;
   background-color: var(--background);
 }
 
@@ -14,7 +17,7 @@ body::-webkit-scrollbar {
 
 body {
   scrollbar-width: thin;
-  scrollbar-color: color-mod(var(--color) alpha(90%)) var(--background);
+  scrollbar-color: color-mod(var(--charcoal) alpha(90%)) var(--background);
   height: 100%;
 }
 
@@ -23,7 +26,22 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: color-mod(var(--color) alpha(90%));
+  background-color: color-mod(var(--charcoal) alpha(90%));
+}
+
+main {
+  display: flex;
+  padding-bottom: 4rem;
+  flex-direction: column;
+  min-width: 0;
+  max-width: var(--page_width);
+  margin: 0 auto;
+}
+
+.layout-wrapper {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  min-height: 100%;
 }
 
 *,
@@ -61,21 +79,18 @@ img {
 hr {
   width: 100%;
   border: none;
-  background: color-mod(var(--color) a(10%));
+  background: color-mod(var( --charcoal) a(10%));
   height: 1px;
   margin-top: 2rem;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-  text-decoration: inherit;
-  /* transition: all 200ms linear;*/
+  color: var( --denim );
   text-decoration: underline;
 }
 
 a:hover {
-  color: var(--raceway);
+  color: var( --raceway );
 }
 
 ol {
@@ -102,7 +117,7 @@ table {
   caption-side: bottom;
   overflow-x: auto;
   min-width: 100%;
-  border: 1px solid color-mod(var(--color) alpha(30%));
+  border: 1px solid color-mod(var(--charcoal) alpha(30%));
   margin-top: 1rem;
 }
 
@@ -112,7 +127,7 @@ table caption {
 
 td,
 th {
-  border: 1px solid color-mod(var(--color) alpha(30%));
+  border: 1px solid color-mod(var(--charcoal) alpha(30%));
   padding: 0.5rem;
   text-align: left;
 }
@@ -166,7 +181,7 @@ pre {
   white-space: pre-wrap;
   tab-size: 2;
   font-size: 0.95rem;
-  border: 1px solid color-mod(var(--color) a(10%));
+  border: 1px solid color-mod(var(--charcoal) a(10%));
   padding: 1rem;
   margin-top: 1rem;
 }
@@ -187,7 +202,7 @@ pre {
   margin-left: auto;
   margin-right: auto;
   scrollbar-width: thin;
-  scrollbar-color: color-mod(var(--color) alpha(80%));
+  scrollbar-color: color-mod(var(--charcoal) alpha(80%));
 }
 
 pre::-webkit-scrollbar {
@@ -200,7 +215,7 @@ pre::-webkit-scrollbar-track {
 }
 
 pre::-webkit-scrollbar-thumb {
-  background-color: color-mod(var(--color) alpha(80%));
+  background-color: color-mod(var(--charcoal) alpha(80%));
 }
 
 pre,
@@ -229,4 +244,8 @@ mark {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.nowrap {
+  white-space: nowrap;
 }

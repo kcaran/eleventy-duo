@@ -9,17 +9,14 @@
 }
 
 .tags a {
-  text-decoration: none;
   color: var( --harbor );
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
 }
 
 .tags a:hover {
-  text-decoration: underline;
   color: var( --raceway );
-}
-
-.post-list__wrapper {
-  margin-top: 2rem;
+  border-bottom: 1px dotted var( --harbor );
 }
 
 .post-list__heading {
@@ -30,7 +27,7 @@
 .post-list {
   list-style: none;
   /* offset without list-style */
-  margin-left: -1.2rem;
+  margin: 3rem 0 0 -1.2rem;
 }
 
 .post-list__item {
@@ -47,6 +44,7 @@
 
 .post-list__title {
   margin: 0.5rem 0;
+  font-size: var( --text-xl );
 }
 
 .post-list__title a {
@@ -62,7 +60,6 @@
 
 .post-list__details {
 	display: flex;
-	padding-right: 1rem;
 	justify-content: space-between;
 	margin-bottom: 1rem;
 }
@@ -82,10 +79,12 @@
 .post-list__tags a {
   text-decoration: none;
   color: var( --harbor );
+  border-bottom: 1px solid transparent;
 }
 
 .post-list__tags a:hover {
   color: var(--raceway);
+  border-bottom: 1px dotted var( --harbor );
 }
 
 .post-list__excerpt {
@@ -103,7 +102,6 @@
 }
 
 .post-list__read-more:hover {
-  text-decoration: underline;
 }
 
 .all-posts-link {
@@ -112,7 +110,7 @@
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
-  font-size: var(--text-lg);
+  font-size: var(--text-2xl);
   text-decoration: underline;
   color: currentColor;
 }
