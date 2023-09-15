@@ -30,7 +30,7 @@ header {
 a.site-title {
   color: var( --harbor );
   text-decoration: none;
-  background: url(../images/originalbug_512_2023.svg) no-repeat 0 0;
+  background: url(../img/originalbug_512_2023.svg) no-repeat 0 0;
   background-size: contain;
   padding-left: 92px;
 }
@@ -95,6 +95,7 @@ a.site-title:hover {
 	& svg {
 		display: inline-block;
 		width: 28px;
+		height: 28px;
 		vertical-align: text-bottom;
 	}
 	&:hover svg {

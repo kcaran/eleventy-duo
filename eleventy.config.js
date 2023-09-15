@@ -2,31 +2,24 @@ const { DateTime } = require('luxon');
 const timeToRead = require('eleventy-plugin-time-to-read');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const htmlmin = require('html-minifier')
 const fs = require('fs');
 const path = require('path');
 
-const isDev = process.env.ELEVENTY_ENV === 'development';
-const isProd = process.env.ELEVENTY_ENV === 'production'
-
 const manifestPath = path.resolve(
   __dirname,
-  'public',
+  'build',
   'assets',
   'manifest.json'
 );
 
-const manifest = isDev
-  ? {
-      'main.js': '/assets/main.js',
-      'main.css': '/assets/main.css',
-    }
-  : JSON.parse(fs.readFileSync(manifestPath, { encoding: 'utf8' }));
+const manifest = JSON.parse(fs.readFileSync(manifestPath, { encoding: 'utf8' }));
 
 // Use markdown-it
 function configureMarkdownIt() {
+  'use strict';
+
   // Reference: https://github.com/markdown-it/markdown-it-container/issues/23
-  return require("markdown-it")({ html: true, linkify: true })
+  return require('markdown-it')({ html: true, linkify: true })
     .use(require('markdown-it-attrs'))
     .use(require('markdown-it-container'), 'dynamic', {
       validate: function () { return true; },
@@ -38,10 +31,15 @@ function configureMarkdownIt() {
           return '</div>';
         }
       }
+    })
+    .use(require('markdown-it-implicit-figures'), {
+        keepAlt: true
     });
 }
 
 module.exports = function (eleventyConfig) {
+  'use strict';
+
   eleventyConfig.addPlugin(timeToRead);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -58,19 +56,19 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.setDataDeepMerge(true);
-  eleventyConfig.addPassthroughCopy({ 'src/images': 'images' });
+  eleventyConfig.addPassthroughCopy({ 'src/img': 'img' });
   eleventyConfig.addPassthroughCopy( 'poker' );
-  eleventyConfig.addPassthroughCopy( { "favicon" : "/" } );
+  eleventyConfig.addPassthroughCopy( { 'favicon' : '/' } );
 
   eleventyConfig.addShortcode('bundledcss', function () {
-    return manifest['main.css']
-      ? `<link href="${manifest['main.css']}" rel="stylesheet" />`
+    return manifest['main.css'] ?
+      `<link href="${manifest['main.css']}" rel="stylesheet" />`
       : '';
   });
 
   eleventyConfig.addShortcode('bundledjs', function () {
-    return manifest['main.js']
-      ? `<script src="${manifest['main.js']}"></script>`
+    return manifest['main.js'] ?
+      `<script src="${manifest['main.js']}"></script>`
       : '';
   });
 
@@ -90,7 +88,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('dateToIso', (dateString) => {
-    return new Date(dateString).toISOString()
+    return new Date(dateString).toISOString();
   });
 
   eleventyConfig.addFilter('head', (array, n) => {
@@ -139,22 +137,10 @@ module.exports = function (eleventyConfig) {
       });
   });
 
-  eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
-    if ( outputPath && outputPath.endsWith(".html") && isProd) {
-      return htmlmin.minify(content, {
-        removeComments: true,
-        collapseWhitespace: true,
-        useShortDoctype: true,
-      });
-    }
-
-    return content;
-  });
-
   return {
     dir: {
       input: 'src',
-      output: 'public',
+      output: 'build',
       includes: 'includes',
       data: 'data',
       layouts: 'layouts'
