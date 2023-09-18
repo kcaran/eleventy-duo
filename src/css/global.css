@@ -85,12 +85,14 @@ hr {
 }
 
 a {
-  color: var( --denim );
-  text-decoration: underline;
+  color: var( --safety-blue );
+  border-bottom: 1px dotted var( --raceway );
+  text-decoration: none;
 }
 
 a:hover {
-  color: var( --raceway );
+  color: var( --harbor );
+  border-bottom-color: var( --harbor );
 }
 
 ol {
@@ -227,6 +229,8 @@ pre code {
   background: transparent;
   padding: 0;
   margin: 0;
+  white-space: pre;
+  font-size: var(--text-sm);
 }
 
 mark {
@@ -248,4 +252,11 @@ mark {
 
 .nowrap {
   white-space: nowrap;
+}
+
+figcaption {
+	display: block;
+	text-align: center;
+	margin-top: 8px;
+	font-style: italic;
 }

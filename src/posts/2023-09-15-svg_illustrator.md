@@ -1,12 +1,10 @@
 ---
 layout: post
-title:  "Creating SVG Files in Adobe Illustator"
+title:  'SVG Files in Adobe Illustator'
 date:   '2023-09-15'
 tags: [webdesign, svg, css, illustrator]
 permalink: posts/{{ title | slugify }}.html
 ---
-
-## Creating SVG files in Adobe Illustrator
 
 Although it has gotten better over the years, Adobe Illustrator doesn't automatically produce SVG files completely suitable (or optimal) for websites.
 
@@ -28,25 +26,25 @@ By convention, make the artboard 960px square. Create two squares: one the full 
 
 Hide these outline squares before saving the image.
 
-![Square around artboard and icon](/img/svg_illustrator/figure01.png)
+![Square around artboard and icon](/img/svg_illustrator/figure01.png "Square around artboard and icon")
 
 If the image is not square, use 960 as the smaller dimension and scale the larger dimension accordingly. Keep the same 40px padding around the entire image.
 
 ### Step 2 - Export the Image as SVG
 
-Choose File -> Export -> Export As
+Choose <code>File --> Export --> Export As</code>
 
 In the Export window, make sure `Use Artboards` is checked (and the correct one is selected).
 
-![SVG export options](/img/svg_illustrator/figure02.png)
+![SVG export options](/img/svg_illustrator/figure02.png "SVG export options")
 
 For the SVG Options, `Styling` can either be `Internal CSS` or `Presentation Attributes`. If the image is a single color, `Presentation Attributes` is a little more straightforward to work with. Fonts should almost certainly be converted to outlines. Object IDs can be `Minimal`.
 
-Unfortunately, in my experiments even with a large artboard Illustrator manages to corrupt the image if less than 2 Decimal places are used in the export.
+Unfortunately, in my experiments even with a large artboard Illustrator manages to corrupt the image if less than 2 decimal places are used in the export.
 
 Select `Minify` but not `Responsive`.
 
-![SVG options dialog](/img/svg_illustrator/figure03.png)
+![SVG options dialog](/img/svg_illustrator/figure03.png "SVG options dialog")
 
 ### Step 3 - Save in Illustrator format!
 

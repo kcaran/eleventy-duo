@@ -30,13 +30,10 @@
 
 .post__tags a {
 	text-decoration: none;
-	color: var( --harbor );
 	border-bottom: 1px solid transparent;
 }
 
 .post__tags a:hover {
-	color: var( --raceway );
-	border-bottom: 1px dotted var( --harbor );
 }
 
 .post__content {
@@ -60,10 +57,10 @@
 }
 
 .post__pagination a {
-	text-decoration: none;
+	border-bottom: none;
 }
 .post__pagination span {
-	text-decoration: underline;
+	border-bottom: 1px dotted var(--harbor);
 }
 
 .post__next:before {

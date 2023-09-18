@@ -19,7 +19,11 @@ function configureMarkdownIt() {
   'use strict';
 
   // Reference: https://github.com/markdown-it/markdown-it-container/issues/23
-  return require('markdown-it')({ html: true, linkify: true })
+  return require('markdown-it')({
+      html: true,
+      linkify: true,
+      typographer: true
+    })
     .use(require('markdown-it-attrs'))
     .use(require('markdown-it-container'), 'dynamic', {
       validate: function () { return true; },
@@ -33,8 +37,11 @@ function configureMarkdownIt() {
       }
     })
     .use(require('markdown-it-implicit-figures'), {
-        keepAlt: true
-    });
+        figcaption: 'title',
+        keepAlt: true,
+        link: true
+    })
+    .use(require('markdown-it-smartarrows'));
 }
 
 module.exports = function (eleventyConfig) {

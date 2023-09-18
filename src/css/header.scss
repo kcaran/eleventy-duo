@@ -28,15 +28,13 @@ header {
 }
 
 a.site-title {
-  color: var( --harbor );
-  text-decoration: none;
+  border-bottom: none;
   background: url(../img/originalbug_512_2023.svg) no-repeat 0 0;
   background-size: contain;
   padding-left: 92px;
 }
 
 a.site-title:hover {
-  color: var( --raceway );
 }
 
 .site-title h1 {
@@ -62,7 +60,6 @@ a.site-title:hover {
 }
 
 .nav__list a {
-  color: var( --harbor );
   text-decoration: none;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -77,9 +74,12 @@ a.site-title:hover {
   margin-right: 0;
 }
 
+.nav__list a {
+  border-bottom-color: transparent;
+}
+
 .nav__list a:hover {
-  color: var( --raceway );
-  border-bottom: 1px dotted var( --harbor );
+  border-bottom-color: var( --harbor );
 }
 
 .nav-social {
@@ -92,6 +92,7 @@ a.site-title:hover {
 
 .nav-social a {
 	text-decoration: none;
+	border-bottom: none;
 	& svg {
 		display: inline-block;
 		width: 28px;

@@ -26,6 +26,7 @@
     "markdown-it-bracketed-spans": "*",
     "markdown-it-container": "*",
     "markdown-it-implicit-figures": "*",
+    "markdown-it-smartarrows": "*",
     "mini-css-extract-plugin": "*",
     "npm-run-all": "*",
     "postcss": "^8.4.23",
@@ -48,5 +49,7 @@
     "build:site": "env ELEVENTY_ENV=production eleventy",
     "clean": "rm -rf ./build"
   },
-  "dependencies": {}
+  "dependencies": {
+    "markdown-it-smartarrows": "^1.0.1"
+  }
 }
