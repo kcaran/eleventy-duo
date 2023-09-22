@@ -3,11 +3,31 @@
  * Based on dabblet (https://dabblet.com)
  * @author Lea Verou
  */
+:root {
+	--sol_base03:	#002b36;
+	--sol_base02:	#073642;
+	--sol_base01:	#586e75;
+	--sol_base00:	#657b83;
+	--sol_base0:	#839496;
+	--sol_base1:	#93a1a1;
+	--sol_base2:	#eee8d5;
+	--sol_base3:	#fdf6e3;
+
+	--sol_yellow:	#b58900;
+	--sol_orange:	#cb4b16;
+	--sol_red:		#dc322f;
+	--sol_magenta:	#d33682;
+	--sol_violet:	#6c71c4;
+	--sol_blue:		#268bd2;
+	--sol_cyan:		#2aa198;
+	--sol_green:	#859900;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #ABB2BF;
+  color: var(--sol_base03);
   background: none;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: 'Ubuntu Mono', monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -26,7 +46,7 @@ pre[class*="language-"] {
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
   text-shadow: none;
-  background: #383e49;
+  background: var(--sol_base3);
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
@@ -50,7 +70,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #282c34;
+  background: var(--sol_base3);
 }
 
 /* Inline code */
@@ -64,16 +84,17 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #5C6370;
+  color: var(--sol_base01);
+	font-style: italic;
 }
 
 .token.punctuation {
-  color: #abb2bf;
+  color: var(--sol_base03);
 }
 
 .token.selector,
 .token.tag {
-  color: #e06c75;
+  color:var(--sol_magenta);
 }
 
 .token.property,
@@ -83,7 +104,7 @@ pre[class*="language-"] {
 .token.symbol,
 .token.attr-name,
 .token.deleted {
-  color: #d19a66;
+  color: var(--sol_yellow);
 }
 
 .token.string,
@@ -91,7 +112,7 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.builtin,
 .token.inserted {
-  color: #98c379;
+  color: var(--sol_orange);
 }
 
 .token.operator,
@@ -99,22 +120,26 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #56b6c2;
+  color: var(--sol_blue);
 }
 
 .token.atrule,
 .token.keyword {
-  color: #c678dd;
+  color: var(--sol_red);
+	font-weight: bold;
 }
 
 .token.function {
-  color: #61afef;
+  color: var(--sol_blue);
 }
 
-.token.regex,
+.token.regex {
+  color: var(--sol_orange);
+}
+
 .token.important,
 .token.variable {
-  color: #c678dd;
+  color: var(--sol_cyan);
 }
 
 .token.important,
@@ -165,7 +190,7 @@ pre.line-numbers > code {
 
 .line-numbers-rows > span:before {
 	content: counter(linenumber);
-	color: #5C6370;
+	color: var(--sol_green);
 	display: block;
 	padding-right: 0.8em;
 	text-align: right;

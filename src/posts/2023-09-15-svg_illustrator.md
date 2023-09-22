@@ -10,7 +10,7 @@ Although it has gotten better over the years, Adobe Illustrator doesn't automati
 
 This document is an opinionated process for creating suitable web SVGs. A "suitable web SVG" is one that can be easily and quickly tweaked by a developer by editing the code directly. It is also optimized to make it easy to embed in HTML or CSS files.
 
-### A Gentle Reminder: SVG is Code!
+## A Gentle Reminder: SVG is Code!
 
 Unlike binary image file formats, it is possible to edit the code that generates the SVG image directly. At a minimum, you should feel comfortable with opening the SVG file in a text editor and inspecting the contents.
 
@@ -105,12 +105,12 @@ x 1 invalid files.
 
 ## Resources
 
-https://www.aaron-gustafson.com/notebook/please-size-your-inline-svgs/
+### https://www.aaron-gustafson.com/notebook/please-size-your-inline-svgs/
 
-https://www.sarasoueidan.com/blog/svg-coordinate-systems/
+### https://www.sarasoueidan.com/blog/svg-coordinate-systems/
 
-https://stackoverflow.com/questions/18467982/are-svg-parameters-such-as-xmlns-and-version-needed
+### https://stackoverflow.com/questions/18467982/are-svg-parameters-such-as-xmlns-and-version-needed
 
-https://css-irl.info/optimising-svgs-for-the-web/
+### https://css-irl.info/optimising-svgs-for-the-web/
 
-https://cloudconvert.com/svg-to-emf
+### https://cloudconvert.com/svg-to-emf

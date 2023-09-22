@@ -192,10 +192,11 @@ code,
 kbd {
   font-feature-settings: normal;
   background: color-mod(var(--heather) a(20%));
+  background: var(--sol_base3);
   color: var(--atlantic);
   padding: 1px 6px;
   margin: 0 2px;
-  font-size: 0.95rem;
+  font-size: 0.9em;
 }
 
 pre {
