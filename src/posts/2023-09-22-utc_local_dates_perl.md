@@ -16,23 +16,25 @@ Date conversions can be confusing because there are a number of tools used in th
 
 * The dates being converted are in standard ISO format: '2015-03-08 06:59:00'.
 
-## Step 1: Format the Date String
+### Step 1: Format the Date String
 
-Before passing the date string to Time::Piece, strip off everything after the integer seconds. If you need the milliseconds data, you can re-attach it after convertion. The same applies to any timezone indicators: add them back in after conversion.
+Before passing the date string to Time::Piece, strip off everything after the integer seconds. If you need the milliseconds data, you can re-attach it after conversion. The same applies to any timezone indicators: add them back in after conversion.
 
-## Step 2: Create a new Time::Piece object using `strptime`
+Not following this step caused me a lot of confusion in the past. The linux `strptime` c-function doesn't do a great job of supporting timezones. You are much better off stripping them off before trying to convert between UTC and local time. 
+
+### Step 2: Create a new Time::Piece object using `strptime`
 
 The `strptime` function converts a well-formed date string to a Time::Piece object. The trick here is that you use `Time::Piece->strptime()` if the date is already in UTC, and you use `localtime->strptime()` if the date is a local time.
 
-## Step 3: Convert the date using the epoch seconds
+### Step 3: Convert the date using the epoch seconds
 
 Use the `epoch()` function to create a new `Time::Piece` in the desired timezone. If you want your date in UTC, use `Time::Piece->gmtime( $epoch )`. Otherwise, use `Time::Piece->localtime( $epoch )` for the local timezone.
 
-## Step 4: Use `strftime` to create the converted date string
+### Step 4: Use `strftime` to create the converted date string
 
 I always use `$tp->strftime( '%Y-%m-%d %H:%M:%S' )` to create a date string from a `Time::Piece` object, but `$tp->datetime` works as well (with a capital T separating the date and time).
 
-## Sample program
+### Sample program
 
 ~~~perl
 #!/usr/bin/env perl
@@ -97,4 +99,20 @@ $utc = local_to_utc( $local );
 print "DST *is in effect: utc($utc) = local($local)\n";
 
 exit;
+~~~
+
+Here is the output of the script. Note that the dates are one minute (60 epoch seconds) apart, but Daylight Savings Time in the Eastern time zone changes the time from 1:59am to 3:00am. Both 2:00am and 3:00am for that day return the same epoch time.
+
+~~~sh
+$ perl timezone.pl
+UTC epoch is   1425797940
+DST not in effect: utc(2015-03-08T06:59:00.399Z) = local(2015-03-08 01:59:00)
+UTC epoch is   1425798000
+DST *is in effect: utc(2015-03-08 07:00:00Z) = local(2015-03-08 03:00:00)
+Local epoch is 1425797940
+DST not in effect: utc(2015-03-08 06:59:00) = local(2015-03-08T01:59:00-05:00)
+Local epoch is 1425798000
+DST *is in effect: utc(2015-03-08 07:00:00) = local(2015-03-08T02:00:00-04:00)
+Local epoch is 1425798000
+DST *is in effect: utc(2015-03-08 07:00:00) = local(2015-03-08T03:00:00-04:00)
 ~~~
