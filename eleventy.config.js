@@ -114,7 +114,7 @@ module.exports = function (eleventyConfig) {
 
   // https://griffa.dev/posts/tips-for-debugging-in-11ty/
   eleventyConfig.addFilter( 'debugger', (...args) => {
-    console.log( ...args )
+    console.log( 'KAC', ...args );
     debugger;
   });
 

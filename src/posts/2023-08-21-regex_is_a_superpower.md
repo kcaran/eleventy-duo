@@ -6,7 +6,7 @@ tags: [coding, perl, regex]
 permalink: posts/{{ title | slugify }}.html
 ---
 
-![I Am Devloper Regex Tweet](/img/i_am_devloper_regex.png)
+![I Am Devloper Regex Tweet](/img/i_am_devloper_regex.png){.hero}
 
 In an August 15 tweet, [@iamdevloper](https://twitter.com/iamdevloper/status/1691353496673513472?s=20), a very funny programmer-humor account, asked which technology you wouldn't bother to learn over again: JavaScript, Regex, Kubernetes, or PHP. Never mind the completely obvious answer (if you aren't in operations at Google, you probably don't need Kubernetes), I was blown away on how many of the responders admitting to not knowing Regex.
 

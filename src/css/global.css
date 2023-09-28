@@ -92,7 +92,7 @@ a {
 
 a:hover {
   color: var( --harbor );
-  border-bottom-color: var( --harbor );
+  border-bottom: 1px solid var( --harbor );
 }
 
 ol {
