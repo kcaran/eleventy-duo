@@ -3,6 +3,7 @@ const timeToRead = require('eleventy-plugin-time-to-read');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const fs = require('fs');
+const inspect = require('util').inspect;
 const path = require('path');
 
 const manifestPath = path.resolve(
@@ -14,7 +15,6 @@ const manifestPath = path.resolve(
 
 const manifest = JSON.parse(fs.readFileSync(manifestPath, { encoding: 'utf8' }));
 
-// Use markdown-it
 function configureMarkdownIt() {
   'use strict';
 
@@ -62,6 +62,13 @@ module.exports = function (eleventyConfig) {
     return highlighter(str, language);
   });
 
+  // Excerpts
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    // Optional, default is "---"
+    excerpt_separator: '<!-- more -->'
+  });
+
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addPassthroughCopy({ 'src/img': 'img' });
   eleventyConfig.addPassthroughCopy( 'poker' );
@@ -77,11 +84,6 @@ module.exports = function (eleventyConfig) {
     return manifest['main.js'] ?
       `<script src="${manifest['main.js']}"></script>`
       : '';
-  });
-
-  eleventyConfig.addFilter('excerpt', (post) => {
-    const content = post.replace(/(<([^>]+)>)/gi, '');
-    return content.substr(0, content.lastIndexOf(' ', 200)) + '...';
   });
 
   eleventyConfig.addFilter('readableDate', (dateObj) => {
@@ -104,6 +106,21 @@ module.exports = function (eleventyConfig) {
     }
 
     return array.slice(0, n);
+  });
+
+  // https://github.com/11ty/eleventy/issues/1526
+  eleventyConfig.addFilter( 'debug',
+		(content) => `<pre>${inspect(content)}</pre>`);
+
+  // https://griffa.dev/posts/tips-for-debugging-in-11ty/
+  eleventyConfig.addFilter( 'debugger', (...args) => {
+    console.log( ...args )
+    debugger;
+  });
+
+  // https://github.com/11ty/eleventy/issues/1380
+  eleventyConfig.addFilter( 'md', function (content = '') {
+    return configureMarkdownIt().render( content );
   });
 
   eleventyConfig.addCollection('tagList', function (collection) {

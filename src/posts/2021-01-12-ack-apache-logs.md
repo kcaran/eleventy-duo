@@ -24,3 +24,5 @@ function acklog() {
   ack "$@" | ack -v '\.(css|eot|gif|ico|jpe?g|js|png|svg|swf|webp|woff2?|xml)[? ]'
 }
 ~~~
+
+<!-- more -->

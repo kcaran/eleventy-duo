@@ -10,6 +10,8 @@ Splitting a Perl application into seperate files can be trickier than
 doing it in other languages, like C or C++, but it is still an
 important part of producing maintainable code.  
 
+<!-- more -->
+
 ## Creating the Package
 
 A Perl <b>module</b> is a collection of code stored in a single file.

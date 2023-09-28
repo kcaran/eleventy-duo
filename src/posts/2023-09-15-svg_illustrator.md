@@ -10,6 +10,8 @@ Although it has gotten better over the years, Adobe Illustrator doesn't automati
 
 This document is an opinionated process for creating suitable web SVGs. A "suitable web SVG" is one that can be easily and quickly tweaked by a developer by editing the code directly. It is also optimized to make it easy to embed in HTML or CSS files.
 
+<!-- more -->
+
 ## A Gentle Reminder: SVG is Code!
 
 Unlike binary image file formats, it is possible to edit the code that generates the SVG image directly. At a minimum, you should feel comfortable with opening the SVG file in a text editor and inspecting the contents.

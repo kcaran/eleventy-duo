@@ -23,7 +23,13 @@
         </div>
       </div>
 
-      <p class="post-list__excerpt">{{ post.templateContent | excerpt | safe  }}</p>
+      <article class="post-list__excerpt">
+        {% if post.data.excerpt %}
+          {{ post.data.excerpt | md | safe }}
+        {% else %}
+          {{ post.page.excerpt | md | safe }}
+        {% endif %}
+      </article>
 
       <a class="post-list__read-more" href="{{ post.url }}">read article</a>
     </li>

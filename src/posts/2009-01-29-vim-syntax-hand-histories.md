@@ -13,6 +13,8 @@ different sections of code.  I've developed a syntax definition file for the
 and Full Tilt Poker hand history files.
 </p>
 
+<!-- more -->
+
 <p>
 Installation instructions can be found at the beginning of the file.
 Installing the syntax file is fairly straightforward, especially for anyone

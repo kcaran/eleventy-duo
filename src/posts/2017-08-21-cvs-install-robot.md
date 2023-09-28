@@ -14,6 +14,8 @@ After over ten years of this process, I finally realized that we could
 automate this process, at least for the staging server. A cron script
 polling a system mailbox every two minutes kicks off the process.
 
+<!-- more -->
+
 ## CVS Command
 
 Because the cron job runs under the Apache web server user, we need to

@@ -14,6 +14,8 @@ specify a default sort.
 	loaded, the sortList command will crash with a "parsers is undefined"
 	error.
 
+<!-- more -->
+
 2. When the table is modified (rows are added or deleted), let tablesorter
 know the table has been changed with the following command:
 

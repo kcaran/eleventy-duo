@@ -8,6 +8,8 @@ permalink: posts/{{ title | slugify }}.html
 
 `Time::Piece` is my preferred perl module for handling dates. Here is how it can be used to convert between UTC and the local time, even for past dates which may have crossed the current daylight savings time status.
 
+<!-- more -->
+
 ## Assumptions and Restrictions
 
 Date conversions can be confusing because there are a number of tools used in the process, each with its own quirks (or limitations). So there are the caveats to this process.

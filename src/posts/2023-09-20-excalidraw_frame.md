@@ -10,6 +10,8 @@ My favorite app for creating diagrams is [excalidraw](https://excalidraw.com/). 
 
 There was only one thing that bothered me about the app. When images are exported, there is no padding or margins around the image, which can make them hard to work with. I wasn't the only one with the issue and someone [opened a github issue to discuss possible solutions](https://github.com/excalidraw/excalidraw/issues/1556). In the end, the issue was closed without a resolution, because there didn't seem to be a generic solution that would please everyone.
 
+<!-- more -->
+
 ![Export image with no padding around diagram](/img/excalidraw/ss01_export_no_padding.png "Export image with no padding around diagram")
 
 ## The Workaround: Adding an Invisible Frame
