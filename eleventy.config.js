@@ -120,7 +120,8 @@ module.exports = function (eleventyConfig) {
 
   // https://github.com/11ty/eleventy/issues/1380
   eleventyConfig.addFilter( 'md', function (content = '') {
-    return configureMarkdownIt().render( content );
+    let html = configureMarkdownIt().render( content );
+    return html;
   });
 
   eleventyConfig.addCollection('tagList', function (collection) {
