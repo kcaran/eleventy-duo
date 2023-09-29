@@ -25,6 +25,7 @@ function configureMarkdownIt() {
       typographer: true
     })
     .use(require('markdown-it-attrs'))
+    .use(require('markdown-it-bracketed-spans'))
     .use(require('markdown-it-container'), 'dynamic', {
       validate: function () { return true; },
       render: function (tokens, idx) {
