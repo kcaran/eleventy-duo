@@ -1,6 +1,6 @@
 @import "global.css";
 @import "variable.css";
-@import "prism-theme.css";
+@import "solarized-light.scss";
 @import "typography.css";
 @import "post-list.css";
 @import "hero.css";

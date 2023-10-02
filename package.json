@@ -25,6 +25,7 @@
     "markdown-it-attrs": "*",
     "markdown-it-bracketed-spans": "*",
     "markdown-it-container": "*",
+    "markdown-it-highlightjs": "*",
     "markdown-it-implicit-figures": "*",
     "markdown-it-smartarrows": "*",
     "mini-css-extract-plugin": "*",
@@ -51,6 +52,5 @@
     "dryrun": "env ELEVENTY_ENV=production eleventy --dryrun"
   },
   "dependencies": {
-    "markdown-it-smartarrows": "^1.0.1"
   }
 }

@@ -1,0 +1,45 @@
+/*!
+  Theme: Solarized Light
+  Author: Ethan Schoonover (modified by aramisgithub)
+  License: ~ MIT (or more permissive) [via base16-schemes-source]
+  Maintainer: @highlightjs/core-team
+  Version: 2021.09.0
+*/
+:root {
+    /* https://meat.io/oksolar */
+	--sol_base03:	#002d38;
+	--sol_base02:	#093946;
+	--sol_base01:	#5b7279;
+	--sol_base00:	#657377;
+	--sol_base0:	#98a8a8;
+	--sol_base1:	#8faaab;
+	--sol_base2:	#f1e9d2;
+	--sol_base3:	#fbf7ef;
+	--sol_yellow:	#ac8300;
+	--sol_orange:	#d56500;
+	--sol_red:		#f23749;
+	--sol_magenta:	#dd459d;
+	--sol_violet:	#7d80d1;
+	--sol_blue:		#2b90d8;
+	--sol_cyan:		#259d94;
+	--sol_green:	#819500;
+}
+pre code.hljs{display:block;overflow-x:auto;padding:1em}
+code.hljs{padding:3px 5px}
+.hljs{color:var(--sol_base02);background:var(--sol_base3)}
+.hljs ::selection,.hljs::selection{background-color:var(--sol_base1);color:var(--sol_base01)}
+.hljs-comment{color:var(--sol_base00)}
+.hljs-tag{color:var(--sol_base00)}
+.hljs-operator,.hljs-punctuation,.hljs-subst{color:var(--sol_base01)}
+.hljs-operator{opacity:.7}
+.hljs-bullet,.hljs-deletion,.hljs-name,.hljs-selector-tag,.hljs-template-variable,.hljs-variable{color:var(--sol_red)}
+.hljs-attr,.hljs-link,.hljs-literal,.hljs-number,.hljs-symbol,.hljs-variable.constant_{color:var(--sol_yellow)}
+.hljs-class .hljs-title,.hljs-title,.hljs-title.class_{color:var(--sol_yellow)}
+.hljs-strong{font-weight:700;color:var(--sol_yellow)}
+.hljs-addition,.hljs-code,.hljs-string,.hljs-title.class_.inherited__{color:var(--sol_orange)}
+.hljs-built_in,.hljs-doctag,.hljs-keyword.hljs-atrule,.hljs-quote,.hljs-regexp{color:var(--sol_magenta)}
+.hljs-attribute,.hljs-function .hljs-title,.hljs-section,.hljs-title.function_,.ruby .hljs-property{color:var(--sol_blue)}
+.diff .hljs-meta,.hljs-keyword,.hljs-template-tag,.hljs-type{color:var(--sol_magenta)}
+.hljs-emphasis{color:var(--sol_violet);font-style:italic}
+.hljs-meta,.hljs-meta .hljs-keyword,.hljs-meta .hljs-string{color:var(--sol_magenta)}
+.hljs-meta .hljs-keyword,.hljs-meta-keyword{font-weight:700}

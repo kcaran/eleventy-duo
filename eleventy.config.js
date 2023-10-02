@@ -1,7 +1,6 @@
 const { DateTime } = require('luxon');
 const timeToRead = require('eleventy-plugin-time-to-read');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const fs = require('fs');
 const inspect = require('util').inspect;
 const path = require('path');
@@ -24,7 +23,6 @@ function configureMarkdownIt() {
       linkify: true,
       typographer: true
     })
-    .use(require('markdown-it-attrs'))
     .use(require('markdown-it-bracketed-spans'))
     .use(require('markdown-it-container'), 'dynamic', {
       validate: function () { return true; },
@@ -42,7 +40,12 @@ function configureMarkdownIt() {
         keepAlt: true,
         link: true
     })
-    .use(require('markdown-it-smartarrows'));
+    .use(require('markdown-it-highlightjs'), {
+        code: true,
+        inline: false
+    })
+    .use(require('markdown-it-smartarrows'))
+    .use(require('markdown-it-attrs'));		// Should be last
 }
 
 module.exports = function (eleventyConfig) {
@@ -50,18 +53,18 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(timeToRead);
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(syntaxHighlight);
+  //eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.setLibrary( 'md', configureMarkdownIt() );
 
   // setup mermaid markdown highlighter
-  const highlighter = eleventyConfig.markdownHighlighter;
-  eleventyConfig.addMarkdownHighlighter((str, language) => {
-    if (language === 'mermaid') {
-      return `<pre class="mermaid">${str}</pre>`;
-    }
-    return highlighter(str, language);
-  });
+  //const highlighter = eleventyConfig.markdownHighlighter;
+  //eleventyConfig.addMarkdownHighlighter((str, language) => {
+  //  if (language === 'mermaid') {
+  //    return `<pre class="mermaid">${str}</pre>`;
+  //  }
+  //  return highlighter(str, language);
+  //});
 
   // Excerpts
   eleventyConfig.setFrontMatterParsingOptions({
