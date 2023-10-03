@@ -18,9 +18,12 @@ html {
 }
 .post__pagination {
 	display: block;
+	margin: 2rem 0.5rem 0;
 }
 .post__pagination a {
 	display: block;
+	margin-bottom: 2rem;
+	text-wrap: balance;
 }
 .post__prev {
 	text-align: right;

@@ -17,7 +17,6 @@ const manifest = JSON.parse(fs.readFileSync(manifestPath, { encoding: 'utf8' }))
 function configureMarkdownIt() {
   'use strict';
 
-  // Reference: https://github.com/markdown-it/markdown-it-container/issues/23
   return require('markdown-it')({
       html: true,
       linkify: true,
@@ -25,6 +24,11 @@ function configureMarkdownIt() {
     })
     .use(require('markdown-it-bracketed-spans'))
     .use(require('markdown-it-container'), 'dynamic', {
+      //
+      // https://github.com/markdown-it/markdown-it-container/issues/23
+      // ::: foo
+      // <div class="foo">
+      //
       validate: function () { return true; },
       render: function (tokens, idx) {
         const token = tokens[idx];
