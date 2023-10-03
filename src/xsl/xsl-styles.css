@@ -1,0 +1,39 @@
+body {
+	max-width: 768px;
+	margin: 20px auto;
+	font-family: sans-serif;
+	line-height: 1.5;
+}
+.rss_info {
+	margin: 0 3rem 3rem 0;
+	padding: 1rem 2rem;
+	background: #eaf8ff;
+	border:1px solid #0085c8;
+	border-left-width: 0.5rem;
+	border-radius: 0.4rem;
+}
+h2 {
+	margin: 2rem 0 1rem;
+}
+p {
+	margin: 0 0 1rem;
+}
+p.post {
+	display: flex;
+	justify-content: space-between;
+}
+p.sitemap_link a {
+	font-size: 1.2rem;
+}
+p.sitemap_link span {
+	display: block;
+}
+a, a:visited {
+	color: #006395;
+	text-decoration: none;
+	border-bottom: 1px dotted #0085c8;
+}
+a:hover {
+	color: #0085c8;
+	border-bottom-style: solid;
+}

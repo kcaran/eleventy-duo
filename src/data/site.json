@@ -63,6 +63,11 @@
       "text": "RSS",
       "url": "/feed.xml",
       "external": true
+    },
+    {
+      "text": "Sitemap",
+      "url": "/sitemap.xml",
+      "external": true
     }
   ],
   "showFooterAttribution": true
