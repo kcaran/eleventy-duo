@@ -14,11 +14,13 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@babel/core": "^7.21.8",
     "@babel/preset-env": "^7.21.5",
+    "@manustays/eleventy-plugin-generate-social-images": "*",
     "autoprefixer": "*",
     "babel-loader": "^8.3.0",
     "css-loader": "*",
     "cssnano": "^6.0.1",
     "eleventy-plugin-time-to-read": "*",
+    "fs-extra": "*",
     "html-minifier": "*",
     "luxon": "^3.3.0",
     "markdown-it": "*",
@@ -50,7 +52,5 @@
     "build:site": "env ELEVENTY_ENV=production eleventy",
     "clean": "rm -rf ./build",
     "dryrun": "env ELEVENTY_ENV=production eleventy --dryrun"
-  },
-  "dependencies": {
   }
 }

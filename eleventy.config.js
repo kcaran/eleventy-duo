@@ -1,7 +1,7 @@
 const { DateTime } = require('luxon');
 const timeToRead = require('eleventy-plugin-time-to-read');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
-const fs = require('fs');
+const fs = require('fs-extra');
 const inspect = require('util').inspect;
 const path = require('path');
 
@@ -52,12 +52,23 @@ function configureMarkdownIt() {
     .use(require('markdown-it-attrs'));		// Should be last
 }
 
+// https://github.com/manustays/eleventy-plugin-generate-social-images
+const generateSocialImages = require("@manustays/eleventy-plugin-generate-social-images");
+
 module.exports = function (eleventyConfig) {
   'use strict';
 
   eleventyConfig.addPlugin(timeToRead);
   eleventyConfig.addPlugin(pluginRss);
   //eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(generateSocialImages, {
+    promoImage: "./src/img/carangelo_keith_4126.jpg",
+    outputDir: "preview",
+    urlPath: "/preview",
+	siteName: "kcaran.com/",
+	titleColor: "#fedb8b",
+	bgGradient: ['#ABB8C0', '#A0ACB3']
+  });
 
   eleventyConfig.setLibrary( 'md', configureMarkdownIt() );
 
@@ -169,6 +180,13 @@ module.exports = function (eleventyConfig) {
       .filter((tag) => {
         return !generalTags.includes(tag);
       });
+  });
+
+  // https://github.com/11ty/eleventy/discussions/2389
+  eleventyConfig.on('eleventy.after', async ({ dir, results, runMode, outputMode }) => {
+    fs.copy('preview', 'build/preview', err => {
+      if (err) return console.error(err);
+    });
   });
 
   return {

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href={{ page.url | url | absoluteUrl(site.url) }}>
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml" />
+
 
     {% bundledcss %}
 
@@ -23,7 +25,7 @@
     <link rel="icon" href="/originalbug_32_2023.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <meta property="og:title" content="{{  title or site.name | escape }}">
+    <meta property="og:title" content="{{ title or site.name | escape }}">
     <meta property="og:site_name" content="{{ site.name }}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ site.url + page.url }}"/>
@@ -35,20 +37,26 @@
 
     {% set desc = description %}
     {% if not desc %}
+      {% if post.data.excerpt %}
+          {% set desc = data.excerpt | striptags | truncate(140) %}
+        {% else %}
+          {% set desc = page.excerpt | striptags | truncate(140) %}
+        {% endif %}
+    {% endif %}
+    {% if not desc %}
       {% set desc = content | striptags | truncate(140) %}
     {% endif %}
     {% if desc %}
       <meta name="description" content="{{ desc | escape  }}">
       <meta property="og:description" content="{{ desc | escape }}">
-      <meta name="description" content="{{ desc | escape }}"/>
     {% endif %}
 
-    {% if not socialImage %}
-      {% set socialImage = site.defaultSocialImage %}
-    {% endif %}
     {% if socialImage %}
       <meta property="og:image" content="{{ socialImage | url | absoluteUrl(site.url) }}"/>
       <meta name="twitter:image" content="{{ socialImage | url | absoluteUrl(site.url) }}"/>
+    {% else %}
+      <meta property="og:image" test="{{ page.url }}" content="{% GenerateSocialImage title | slugify %}"/>
+      <meta name="twitter:image" content="{% GenerateSocialImage title | slugify %}"/>
     {% endif %}
   </head>
   <body>
@@ -119,7 +127,7 @@
                   {% set externalAttribute = 'target="_blank" rel="noopener noreferrer"' %}
                 {% endif %}
 
-                <li>
+                <li{% if item.class %} class="{{ item.class }}"{% endif %}>
                   <a href="{{ item.url | url }}" {{ externalAttribute | safe }} >{{ item.text }}</a>
                 </li>
               {% endfor %}
