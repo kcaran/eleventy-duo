@@ -37,6 +37,7 @@
 }
 
 .post__content {
+  position: relative;
   word-wrap: break-word;
 }
 
@@ -47,8 +48,9 @@
 .post__pagination {
   margin-top: 2rem;
   display: flex;
+	flex-direction: column;
+	gap: 1rem;
   justify-content: space-between;
-  align-items: center;
 }
 
 .post__pagination > *:only-child {
@@ -88,4 +90,16 @@
 	top: 0;
 	font-size: 1.5rem;
 	line-height: 1.9rem;
+}
+
+.video {
+	display: flex;
+	justify-content: space-between;
+	gap: 1em;
+}
+
+.video a {
+	font-size: var(--text-sm);
+	text-wrap: nowrap;
+	align-self: center;
 }

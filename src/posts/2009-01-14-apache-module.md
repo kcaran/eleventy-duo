@@ -2,7 +2,7 @@
 layout: post
 title:  "Writing an Apache Module for RHEL 5"
 date:   '2009-01-14'
-tags: [coding, cvs]
+tags: [apache, webdesign, coding]
 permalink: posts/{{ title | slugify }}.html
 ---
 

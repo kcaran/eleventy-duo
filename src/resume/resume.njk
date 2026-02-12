@@ -20,6 +20,12 @@
 <h1>{{ name }}</h1>
 <h2>{{ occupation }}</h2>
 <p>{{ location }}</p>
+
+<section id="introduction">
+  <h2>Summary</h2>
+  <p>{{ summary }}</p>
+</section>
+
 </div>
 
 <ul class="nav-social">
@@ -36,18 +42,13 @@
     <li><a href="{{ item.url | url }}" title="{{ item.title }}" {{ externalAttribute | safe }} >{{ site.icons[name] | safe }} {{ item.username | safe }}</a></li>
 {% endfor %}
 {% if linkedin %}
-    <li><a href="{{ linkedin }}" title="LinkedIn">{{ site.icons['linkedin'] | safe }}&nbsp;</a></li>
+    <li><a href="{{ linkedin }}" title="LinkedIn">{{ site.icons['linkedin'] | safe }}linkedin</a></li>
 {% endif %}
 {% endif %}
 </ul>
 </header>
 
 <main role="main" class="resume">
-
-<section id="introduction">
-  <h2>Summary</h2>
-  <p>{{ summary }}</p>
-</section>
 
 <section id="experience">
   <h2>Experience</h2>

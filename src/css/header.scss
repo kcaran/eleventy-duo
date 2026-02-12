@@ -7,7 +7,7 @@ header {
   width: 100%;
   /*text-transform: capitalize;*/
   /*text-transform: uppercase;*/
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .header__content {
@@ -24,7 +24,7 @@ header {
 
 .header nav {
   max-width: var(--page_width);
-  margin: 1rem auto;
+  margin: 0 auto;
 }
 
 a.site-title {
@@ -66,8 +66,7 @@ a.site-title:hover {
 }
 
 .nav__list li {
-  margin-left: 0;
-  margin-right: 2rem;
+  margin: 1rem 2rem 0 0;
 }
 
 .nav__list li:last-child {

@@ -7,42 +7,52 @@
 		color: var( --raceway );
 	}
 	& header {
-		max-width: 54rem;
 		margin: 0 0 0 5.5rem;
 		display: flex;
 		justify-content: space-between;
 	}
 	& .identity {
+		max-width: var(--page_width);
 		& h2 {
-			margin-top: 0;
 			font-size: var( --text-xl );
 		}
 		& p {
-			margin-top: 0.5rem;
+		}
+		& section {
+			margin-top: 2rem;
 		}
 	}
+
+
 	& .nav-social {
+		display: flex;
 		flex-direction: column;
 		position: unset;
-		margin-bottom: -2rem;
-		gap: 0.5rem;
+		margin: 0 0 3rem 0;
+		gap: 1.3rem;
+		align-self: flex-start;
 		& li {
+			margin: 0;
 			list-style: none;
 			& a {
 				display: inline-block;
 				position: relative;
 				padding-left: 2.5rem;
 				line-height: 2.25rem;
-				margin-bottom: 4px;
 			}
 		}
 	}
 }
 
-#page_resume .nav-social a svg {
-	position: absolute;
-	left: 0;
-	top: 4px;
+#page_resume .nav-social a {
+	& svg {
+		position: absolute;
+		left: 0;
+		top: 4px;
+	}
+	&[title="LinkedIn"] svg {
+		top: 2px;
+	}
 }
 
 #page_resume header h3, #page_resume header p {
@@ -54,30 +64,28 @@
 }
 
 #page_resume section {
-	margin-top: 2rem;
+	margin-bottom: 2rem;
 	& h2 {
 		margin-bottom: 1rem;
 	}
 }
 
 #page_resume .job {
-	margin-top: 2rem;
+	margin-bottom: 2rem;
 	& h3, & h4 {
-		margin: 0 0 0.25em;
+		margin: 0 0 0.25rem;
 	}
 	& h4 {
 		display: flex;
 		justify-content: space-between;
+		line-height: 1.5;
 	}
 	& li {
-		margin-top: 1rem;
+		margin-bottom: 1rem;
 	}
 }
 
 @media screen and (max-device-width: 480px) {
-	#page_resume {
-		font-size: 87.5%;
-	}
 	#page_resume header {
 		margin: 0;
 		padding: 0 1rem;
@@ -87,7 +95,9 @@
 		margin: 0;
 	}
 	#page_resume .nav-social {
-		margin: 2rem 0 0 -1.2rem;
+		flex-direction: row;
+		justify-content: flex-start;
+		flex-wrap: wrap;
 	}
 	#page_resume .job h4 {
 		flex-direction: column;

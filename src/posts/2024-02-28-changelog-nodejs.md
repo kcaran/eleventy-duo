@@ -2,7 +2,7 @@
 layout: post
 title:  "Changelog/JS Party Podcast on Node.js Notes"
 date:   '2024-02-28'
-tags: [javascript, programming, nodejs]
+tags: [javascript, coding, nodejs]
 permalink: posts/{{ title | slugify }}.html
 ---
 

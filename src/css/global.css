@@ -107,6 +107,7 @@ ul {
 }
 li {
   margin-left: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 b,
@@ -142,27 +143,6 @@ td:only-child {
   text-align: center;
 }
 
-* + h1,
-* + h2 {
-  margin-top: 3rem;
-}
-
-* + h3,
-* + h4,
-* + h5 {
-  margin-top: 3rem;
-}
-
-* + p {
-  margin-top: 2rem;
-}
-
-h2 + p,
-h3 + p,
-h4 + p {
-  margin-top: 1rem;
-}
-
 iframe,
 audio,
 video,
@@ -180,12 +160,16 @@ blockquote {
 }
 
 pre {
+  margin: 0 auto 1rem;
+  padding: 1rem;
+  overflow: auto;
+  max-width: 90vw;
   white-space: pre-wrap;
   tab-size: 2;
   font-size: 0.95rem;
   border: 1px solid color-mod(var(--charcoal) a(10%));
-  padding: 1rem;
-  margin-top: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: color-mod(var(--charcoal) alpha(80%));
 }
 
 code,
@@ -197,15 +181,6 @@ kbd {
   padding: 1px 6px;
   margin: 0 2px;
   font-size: 0.9em;
-}
-
-pre {
-  overflow: auto;
-  max-width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
-  scrollbar-width: thin;
-  scrollbar-color: color-mod(var(--charcoal) alpha(80%));
 }
 
 pre::-webkit-scrollbar {

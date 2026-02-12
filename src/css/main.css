@@ -2,11 +2,11 @@
 @import "variable.css";
 @import "solarized-light.scss";
 @import "typography.css";
-@import "post-list.css";
+@import "post-list.scss";
 @import "hero.css";
 @import "header.scss";
 @import "footer.css";
-@import "post.css";
+@import "post.scss";
 @import "about.css";
 @import "mobile.css";
 @import "resume.scss";

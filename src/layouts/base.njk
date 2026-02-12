@@ -38,16 +38,16 @@
     {% set desc = description %}
     {% if not desc %}
       {% if post.data.excerpt %}
-          {% set desc = data.excerpt | striptags | truncate(140) %}
+          {% set desc = data.excerpt | md | striptags | truncate(140) %}
         {% else %}
-          {% set desc = page.excerpt | striptags | truncate(140) %}
+          {% set desc = page.excerpt | md | striptags | truncate(140) %}
         {% endif %}
     {% endif %}
     {% if not desc %}
       {% set desc = content | striptags | truncate(140) %}
     {% endif %}
     {% if desc %}
-      <meta name="description" content="{{ desc | escape  }}">
+      <meta name="description" content="{{ desc | escape }}">
       <meta property="og:description" content="{{ desc | escape }}">
     {% endif %}
 

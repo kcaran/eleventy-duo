@@ -145,11 +145,10 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection('tagList', function (collection) {
-    let tagSet = new Set();
+    let tagCount = {};
     collection.getAll().forEach(function (item) {
       if ('tags' in item.data) {
         let tags = item.data.tags;
-
         tags = tags.filter(function (item) {
           switch (item) {
             case 'all':
@@ -162,13 +161,19 @@ module.exports = function (eleventyConfig) {
           return true;
         });
 
-        for (const tag of tags) {
-          tagSet.add(tag);
-        }
+        tags.forEach(tag => {
+          if (!tagCount[tag]) {
+            tagCount[tag] = 0;
+          }
+          tagCount[tag]++;
+        });
       }
     });
 
-    return [...tagSet];
+    // Convert tagCount object to an array of objects and sort by count
+    let sortedTags = Object.keys(tagCount).sort((a, b) => tagCount[b] - tagCount[a]);
+
+    return sortedTags;
   });
 
   eleventyConfig.addFilter('pageTags', (tags) => {

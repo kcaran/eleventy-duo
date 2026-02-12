@@ -9,11 +9,14 @@
 }
 
 .tags a, .post-list__tags a {
-  border-bottom-color: transparent;
-}
-
-.tags a, .post-list__tags a:hover {
-  border-bottom-color: initial;
+	display: inline-block;
+	border-bottom-color: transparent;
+	&:hover {
+		border-bottom-color: initial;
+	}
+	&:before {
+		content: '#\2009';
+	}
 }
 
 .post-list__heading {
@@ -45,7 +48,6 @@
 }
 
 .post-list__title a {
-  font-weight: normal;
   color: inherit;
   border-bottom-color: transparent;
 }
